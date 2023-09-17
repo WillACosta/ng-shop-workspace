@@ -3,11 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'ng-shop-workspace-root',
   template: `
-    <ul class="remote-menu">
-      Shell app works!
-    </ul>
-
-    <router-outlet></router-outlet>
+    <main class="h-screen w-full">
+      <router-outlet></router-outlet>
+    </main>
   `,
 })
 export class AppComponent {}
