@@ -8,4 +8,6 @@ yarn nx g @nx/angular:host $APP_NAME
 npx nx g @nx/angular:remote $APP_NAME \
 --directory=apps/$APP_NAME \
 --host=$HOST_NAME
+
+yarn nx g @nx/angular:setup-tailwind $REMOTE_APP
 ```
