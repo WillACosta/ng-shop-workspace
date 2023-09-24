@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "run:all": "nx serve shell --devRemotes=auth"
+    "dev": "nx serve shell --devRemotes=auth",
+    "run:auth": "nx serve auth",
+    "test:lib": "nx test shared/auth-state",
+    "test": "yarn test:lib"
   },
   "private": true,
   "dependencies": {
@@ -15,6 +18,7 @@
     "@angular/platform-browser": "~16.2.0",
     "@angular/platform-browser-dynamic": "~16.2.0",
     "@angular/router": "~16.2.0",
+    "@ngxs/store": "^3.8.1",
     "@nx/angular": "16.8.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -30,6 +34,7 @@
     "@angular/cli": "~16.2.0",
     "@angular/compiler-cli": "~16.2.0",
     "@angular/language-service": "~16.2.0",
+    "@ngxs/devtools-plugin": "^3.8.1",
     "@nx/eslint-plugin": "16.8.1",
     "@nx/jest": "16.8.1",
     "@nx/js": "16.8.1",

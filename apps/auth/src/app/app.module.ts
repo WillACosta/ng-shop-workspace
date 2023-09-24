@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
+import { RouterModule } from '@angular/router'
+import { NgxsModule } from '@ngxs/store'
+import { AppComponent } from './app.component'
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,13 +15,15 @@ import { AppComponent } from './app.component';
           loadChildren: () =>
             import('./remote-entry/entry.module').then(
               (m) => m.RemoteEntryModule
-            ),
-        },
+            )
+        }
       ],
       { initialNavigation: 'enabledBlocking' }
     ),
+    // SharedAuthStateModule.forRoot(environment.authApiUrl)
+    NgxsModule.forRoot([])
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

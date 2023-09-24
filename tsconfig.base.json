@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@ng-shop-workspace/shared/auth-state": [
+        "shared/auth-state/src/index.ts"
+      ],
+    },
+    "types": ["node", "jest"],
     "strictPropertyInitialization": false
   },
   "exclude": ["node_modules", "tmp"]

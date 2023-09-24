@@ -1,9 +1,16 @@
-import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common'
+import { NgModule } from '@angular/core'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { RouterModule } from '@angular/router'
 
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { LoginViewComponent } from './views';
+import {
+  AuthState,
+  SharedAuthStateModule
+} from '@ng-shop-workspace/shared/auth-state'
+
+import { NgxsModule } from '@ngxs/store'
+import { environment } from '../../../environments/environment'
+import { LoginViewComponent } from './views'
 
 @NgModule({
   imports: [
@@ -13,10 +20,12 @@ import { LoginViewComponent } from './views';
     RouterModule.forChild([
       {
         path: '',
-        component: LoginViewComponent,
-      },
+        component: LoginViewComponent
+      }
     ]),
+    NgxsModule.forFeature([AuthState]),
+    SharedAuthStateModule.forRoot(environment.authApiUrl)
   ],
-  declarations: [LoginViewComponent],
+  declarations: [LoginViewComponent]
 })
 export class LoginViewModule {}
