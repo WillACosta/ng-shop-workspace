@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nx serve shell --devRemotes=auth",
-    "run:auth": "nx serve auth",
-    "test:lib": "nx test shared/auth-state",
-    "test": "yarn test:lib"
+    "dev": "nx serve shell --devRemotes=auth,dashboard",
+    "dev:auth": "nx serve auth",
+    "test:auth-state": "nx test shared/auth-state",
+    "test": "yarn test:auth-state"
   },
   "private": true,
   "dependencies": {

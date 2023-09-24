@@ -7,16 +7,7 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "baseUrl": ".",
-    "paths": {
-      "@environment": ["./src/environments/environment.ts"],
-      "@core/*": ["./src/app/core/*"],
-      "@modules/*": ["./src/app/modules/*"],
-      "@ng-shop-workspace/shared/auth-state": [
-        "../../shared/auth-state/src/index.ts"
-      ]
-    }
+    "noFallthroughCasesInSwitch": true
   },
   "files": [],
   "include": [],

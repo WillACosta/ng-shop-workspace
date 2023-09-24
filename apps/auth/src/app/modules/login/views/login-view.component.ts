@@ -1,11 +1,18 @@
 import { Component, OnInit, isDevMode } from '@angular/core'
-
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
-import { AuthFacade, SignInAction } from '@ng-shop-workspace/shared/auth-state'
+import { Router } from '@angular/router'
+
 import { Actions, ofActionErrored, ofActionSuccessful } from '@ngxs/store'
 import { tap } from 'rxjs'
-import { SignInPayload } from 'shared/auth-state/src/lib/core/types'
-import { ViewUiState } from './constants/view-ui-state'
+
+import { resolveAppImagePath } from '@core/functions'
+import { ViewUiState } from '../../../core/constants/view-ui-state'
+
+import {
+  AuthFacade,
+  SignInAction,
+  SignInPayload
+} from '@ng-shop-workspace/shared/auth-state'
 
 @Component({
   selector: 'ng-shop-workspace-login-view',
@@ -14,6 +21,7 @@ import { ViewUiState } from './constants/view-ui-state'
 export class LoginViewComponent implements OnInit {
   viewUiState = ViewUiState.idle
   viewUiStateType = ViewUiState
+  loadingIconPath = resolveAppImagePath('loading-indicator.svg')
 
   loginForm: FormGroup<{
     email: FormControl<string | null>
@@ -23,7 +31,8 @@ export class LoginViewComponent implements OnInit {
   constructor(
     private readonly fb: FormBuilder,
     private authFacade: AuthFacade,
-    private action: Actions
+    private action: Actions,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -38,11 +47,10 @@ export class LoginViewComponent implements OnInit {
         tap(() => (this.viewUiState = ViewUiState.success))
       )
       .subscribe(() => {
-        // TODO: redirect to base route
-        console.log('logged in')
+        this.router.navigate(['/'])
       })
 
-      this.action
+    this.action
       .pipe(
         ofActionErrored(SignInAction),
         tap(() => (this.viewUiState = ViewUiState.success))

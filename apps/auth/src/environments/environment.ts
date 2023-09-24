@@ -1,4 +1,5 @@
 export const environment = {
   production: false,
-  authApiUrl: 'https://reqres.in/api/login'
+  authApiUrl: 'https://reqres.in/api/login',
+  baseUrl: 'http://localhost:4201'
 }

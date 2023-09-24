@@ -17,6 +17,8 @@ export class AuthFacade implements IAuthFacade {
   @Select(AuthState.isAuthenticated)
   isAuthenticated$: Observable<boolean>
 
+  isAuthenticated = this._store.selectSnapshot(AuthState.isAuthenticated)
+
   signIn(payload: SignInPayload): void {
     const action = new SignInAction(payload)
     this._store.dispatch(action)

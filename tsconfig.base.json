@@ -13,11 +13,9 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "@ng-shop-workspace/shared/auth-state": [
-        "shared/auth-state/src/index.ts"
-      ],
+      "@ng-shop-workspace/shared/auth-state": ["shared/auth-state/src/index.ts"]
     },
     "types": ["node", "jest"],
     "strictPropertyInitialization": false
