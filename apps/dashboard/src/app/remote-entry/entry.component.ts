@@ -1,7 +1,7 @@
-import { Component } from '@angular/core'
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ng-shop-workspace-dashboard-entry',
-  template: `<ng-shop-workspace-nx-welcome></ng-shop-workspace-nx-welcome>`
+  template: `<h1>dashboard</h1>`
 })
 export class RemoteEntryComponent {}

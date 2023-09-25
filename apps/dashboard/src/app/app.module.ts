@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
+import { NgxsModule } from '@ngxs/store'
 import { AppComponent } from './app.component'
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AppComponent } from './app.component'
         }
       ],
       { initialNavigation: 'enabledBlocking' }
-    )
+    ),
+    NgxsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
