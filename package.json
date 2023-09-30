@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nx serve shell --devRemotes=auth,dashboard",
-    "dev:auth": "nx serve auth",
-    "test:auth-state": "nx test shared/auth-state",
+    "start": "concurrently \"yarn:start:api\" \"yarn:start:all\"",
+    "start:api": "json-server api/plant-api.json --watch",
+    "start:all": "nx serve shell --devRemotes=auth,dashboard",
+    "test:auth-state": "nx test libs/auth-state",
     "test": "yarn test:auth-state"
   },
   "private": true,
@@ -20,6 +21,8 @@
     "@angular/router": "~16.2.0",
     "@ngxs/store": "^3.8.1",
     "@nx/angular": "16.8.1",
+    "angular-feather": "^6.5.0",
+    "ngx-toastr": "^17.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -47,6 +50,7 @@
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "autoprefixer": "^10.4.15",
+    "concurrently": "^8.2.1",
     "eslint": "~8.46.0",
     "eslint-config-prettier": "8.1.0",
     "jest": "^29.4.1",

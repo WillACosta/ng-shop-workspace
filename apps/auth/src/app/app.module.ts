@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RouterModule } from '@angular/router'
+
 import { NgxsModule } from '@ngxs/store'
+import { ToastrModule } from 'ngx-toastr'
+
 import { AppComponent } from './app.component'
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(
       [
         {
@@ -20,7 +25,12 @@ import { AppComponent } from './app.component'
       ],
       { initialNavigation: 'enabledBlocking' }
     ),
-    // SharedAuthStateModule.forRoot(environment.authApiUrl)
+    ToastrModule.forRoot({
+      preventDuplicates: true,
+      closeButton: true,
+      progressBar: true,
+      autoDismiss: true
+    }),
     NgxsModule.forRoot([])
   ],
   providers: [],

@@ -12,7 +12,9 @@ import {
   AuthFacade,
   SignInAction,
   SignInPayload
-} from '@ng-shop-workspace/shared/auth-state'
+} from '@ng-shop-workspace/auth-state'
+
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'ng-shop-workspace-login-view',
@@ -32,7 +34,8 @@ export class LoginViewComponent implements OnInit {
     private readonly fb: FormBuilder,
     private authFacade: AuthFacade,
     private action: Actions,
-    private router: Router
+    private router: Router,
+    private toastrService: ToastrService
   ) {}
 
   ngOnInit() {
@@ -47,6 +50,7 @@ export class LoginViewComponent implements OnInit {
         tap(() => (this.viewUiState = ViewUiState.success))
       )
       .subscribe(() => {
+        console.info('navigated to home')
         this.router.navigate(['/'])
       })
 
@@ -56,8 +60,10 @@ export class LoginViewComponent implements OnInit {
         tap(() => (this.viewUiState = ViewUiState.success))
       )
       .subscribe(() => {
-        // TODO: handle error
-        console.log('error')
+        this.toastrService.warning(
+          'Usuário ou senha inválida',
+          'Oops! Encontramos um erro inesperado.'
+        )
       })
   }
 

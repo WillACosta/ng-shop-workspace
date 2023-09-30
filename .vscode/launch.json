@@ -7,8 +7,15 @@
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Launch Chrome against localhost",
+      "name": "run:shell",
       "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "run:auth",
+      "url": "http://localhost:4201",
       "webRoot": "${workspaceFolder}"
     }
   ]

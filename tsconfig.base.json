@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": "./",
     "paths": {
-      "@ng-shop-workspace/shared/auth-state": ["shared/auth-state/src/index.ts"]
+      "@ng-shop-workspace/auth-state": ["libs/auth-state/src/index.ts"],
+      "@ng-shop-workspace/common-ui": ["libs/common-ui/src/index.ts"],
+      "@ng-shop-workspace/shop-state": ["libs/shop-state/src/index.ts"]
     },
     "types": ["node", "jest"],
     "strictPropertyInitialization": false

@@ -1,15 +1,22 @@
+import { AsyncPipe, CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
-
 import { RouterModule } from '@angular/router'
-import { DashboardComponent } from './views/dashboard-view.component'
+
+import { IconsModule } from '@ng-shop-workspace/common-ui'
+
+import { ListHeaderViewComponent } from './views/list-header/list-header-view.component'
+import { PlantListViewComponent } from './views/plant-list/plant-list-view.component'
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [ListHeaderViewComponent, PlantListViewComponent],
   imports: [
+    AsyncPipe,
+    CommonModule,
+    IconsModule,
     RouterModule.forChild([
       {
         path: '',
-        component: DashboardComponent
+        component: PlantListViewComponent
       }
     ])
   ]

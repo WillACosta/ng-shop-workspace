@@ -1,0 +1,43 @@
+<ng-shop-workspace-list-header-view></ng-shop-workspace-list-header-view>
+
+<div class="container mx-auto py-10 px-5">
+  <div class="text-primary font-bold text-2xl mb-6">
+    Confira nossas <br />
+    Plantas Populares
+  </div>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-14"
+  >
+    <div
+      *ngFor="let item of products$ | async"
+      class="flex gap-3 items-center w-full max-w-[600px]"
+    >
+      <img
+        class="w-[200px] rounded-3xl md:w-32"
+        src="{{ item.image }}"
+        alt="plant"
+      />
+
+      <div class="flex flex-col justify-between gap-3">
+        <div>
+          <p class="text-primary mb-2">{{ item.name }}</p>
+          <p class="text-muted">{{ item.description }}</p>
+        </div>
+
+        <div class="flex justify-between items-center">
+          <strong class="text-lg">{{ item.price | currency }}</strong>
+          <button
+            class="bg-primary flex items-center justify-center text-secondary rounded-[100%] cursor-pointer hover:bg-green-900 transition ease-in delay-75 w-[45px] h-[45px]"
+            title="Adicionar ao carrinho"
+          >
+            <i-feather name="plus"></i-feather>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- add shimmer -->
+<!-- add fav icon -->

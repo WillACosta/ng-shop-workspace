@@ -1,13 +1,17 @@
-import { CommonModule } from '@angular/common'
+import { CommonModule, CurrencyPipe } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
-import { RemoteEntryComponent } from './entry.component'
+import { HttpClientModule } from '@angular/common/http'
+import { PlantService } from '@modules/dashboard/data'
 import { remoteRoutes } from './entry.routes'
 
 @NgModule({
-  declarations: [RemoteEntryComponent],
-  imports: [CommonModule, RouterModule.forChild(remoteRoutes)],
-  providers: []
+  imports: [
+    CommonModule,
+    RouterModule.forChild(remoteRoutes),
+    HttpClientModule
+  ],
+  providers: [CurrencyPipe, PlantService]
 })
 export class RemoteEntryModule {}

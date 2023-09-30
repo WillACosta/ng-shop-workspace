@@ -1,5 +1,5 @@
 import { Router } from '@angular/router'
-import { AuthFacade } from '@ng-shop-workspace/shared/auth-state'
+import { AuthFacade } from '@ng-shop-workspace/libs/auth-state'
 
 import { inject } from '@angular/core'
 
