@@ -1,5 +1,5 @@
 import { environment } from '@environment'
 
-export function resolveAppImagePath(resourceName: string) {
-  return `${environment.baseUrl}/assets/${resourceName}`
+export function resolveAppImagePath(resourceName: string, extension = 'svg') {
+  return `${environment.baseUrl}/assets/images/${resourceName}.${extension}`
 }

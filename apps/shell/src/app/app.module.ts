@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NgxsModule } from '@ngxs/store';
 
-import { AuthFacade } from '@ng-shop-workspace/libs/auth-state';
+import { AuthFacade } from '@ng-shop-workspace/auth-state';
 
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';

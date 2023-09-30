@@ -23,7 +23,7 @@ import { ToastrService } from 'ngx-toastr'
 export class LoginViewComponent implements OnInit {
   viewUiState = ViewUiState.idle
   viewUiStateType = ViewUiState
-  loadingIconPath = resolveAppImagePath('loading-indicator.svg')
+  welcomeImagePath = resolveAppImagePath('welcome')
 
   loginForm: FormGroup<{
     email: FormControl<string | null>
