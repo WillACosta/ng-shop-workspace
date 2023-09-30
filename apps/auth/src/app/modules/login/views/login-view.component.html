@@ -85,7 +85,7 @@
         <button
           *ngIf="viewUiState !== viewUiStateType.loading"
           (click)="onClickSignIn()"
-          class="bg-green-600 hover:bg-primary-dark text-white p-4 rounded focus:outline-none w-full"
+          class="bg-primary hover:bg-primary-dark text-white p-4 rounded-xl focus:outline-none w-full transition ease-in delay-75"
           type="button"
         >
           Login
@@ -94,7 +94,7 @@
         <button
           *ngIf="viewUiState === viewUiStateType.loading"
           type="button"
-          class="bg-green-600 flex justify-center gap-4 hover:bg-primary-dark text-white p-4 rounded focus:outline-none w-full"
+          class="bg-primary flex justify-center gap-4 hover:bg-primary-dark text-white p-4 rounded-xl focus:outline-none w-full transition ease-in delay-75"
           disabled
         >
           <svg class="animate-spin w-6 h-6 fill-white" viewBox="3 3 18 18">
