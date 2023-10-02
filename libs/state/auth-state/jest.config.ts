@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
   displayName: 'libs/auth-state',
-  preset: '../../jest.preset.js',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory: '../../coverage/libs/auth-state',
   transform: {

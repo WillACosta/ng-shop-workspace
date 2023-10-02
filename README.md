@@ -3,9 +3,9 @@
 This project servers as a demonstration of using micro-frontend applications powered by NX and Module Federation Plugin, this is a simple plant shop, that have features such
 authentication, cart shop and state management using NGXS library for that. Read more about technical resources below.
 
-<div style="text-align: center;">
+<center>
   <img src="docs/images/screenshot.png" width="700" alt="screenshot" style="margin-top: 35px"/>
-</div>
+</center>
 
 ### Table of contents
 

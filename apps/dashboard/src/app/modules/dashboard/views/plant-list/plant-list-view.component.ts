@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { PlantService } from '@modules/dashboard/data'
 import { ProductModel } from '@ng-shop-workspace/core-common'
-import { ShopFacade } from '@ng-shop-workspace/shop-state'
-import { Observable, map } from 'rxjs'
+import { ProductFacade, ShopFacade } from '@ng-shop-workspace/shop-state'
 
 @Component({
 	selector: 'ng-shop-workspace-dashboard-view',
@@ -10,14 +8,14 @@ import { Observable, map } from 'rxjs'
 })
 export class PlantListViewComponent implements OnInit {
 	constructor(
-		private _plantService: PlantService,
-		private _shopFacade: ShopFacade
+		private _shopFacade: ShopFacade,
+		private _productFacade: ProductFacade
 	) {}
 
-	products$: Observable<ProductModel[]>
+	products$ = this._productFacade.products$
 
 	ngOnInit(): void {
-		this._setListeners()
+		this._getAllProducts()
 	}
 
 	addToCart(item: ProductModel) {
@@ -25,13 +23,10 @@ export class PlantListViewComponent implements OnInit {
 	}
 
 	removeFromCart() {
-		// TODO:
+		throw Error()
 	}
 
-	private _setListeners() {
-		this.products$ = this._plantService.loadAllPlants().pipe(
-			map((response) => response.data),
-			map((value) => value.map((e) => new ProductModel().deserialize(e)))
-		)
+	private _getAllProducts() {
+		this._productFacade.getAllProducts()
 	}
 }

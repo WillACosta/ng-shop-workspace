@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core'
 import { Action, Selector, State, StateContext } from '@ngxs/store'
 import { ShopStateModel } from '../../../models'
 import { createCartItem } from '../../../models/item-cart.model'
@@ -11,6 +12,7 @@ import { AddToCartAction, RemoveFromCartAction } from '../actions'
     total: 0
   }
 })
+@Injectable()
 export class ShopState {
   @Selector()
   static cartTotal(state: ShopStateModel) {
