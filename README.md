@@ -11,12 +11,12 @@ authentication, cart shop and state management using NGXS library for that. Read
 
 ### Technical Resources
 
-- Authentication API integration
-- Mono-repo managed by NX Workspaces
-- Micro-frontend approach with Module Federation
-- State Management with NGXS library
-- Tailwind CSS for create beautifully, responsive and accessible UI
-- Angular frontend application
+- [Authentication API](https://reqres.in/) integration
+- Mono-repo managed by [NX Workspaces](https://nx.dev/)
+- Micro-frontend approach with [Module Federation](https://webpack.js.org/concepts/module-federation/)
+- State Management with [NGXS library](https://www.ngxs.io/)
+- [Tailwind CSS](https://tailwindcss.com/) for create beautifully, responsive and accessible UI
+- [Angular](https://angular.io/) frontend application
 
 ### How to execute
 
@@ -29,7 +29,7 @@ git clone https://github.com/WillACosta/ng-shop-workspace
 3. Run the following command
 
 ```shell
-yarn install & yarn bootstrap
+yarn install && yarn bootstrap
 ```
 
 By executing this command, all the required dependencies will be installed, and then the application will execute on localhost:4200
