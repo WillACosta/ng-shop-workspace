@@ -1,3 +1,1 @@
-export interface UserData {
-  token: string | null
-}
+export * from './user.model';

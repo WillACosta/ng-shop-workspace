@@ -1,4 +1,1 @@
-export interface SignInPayload {
-  email: string
-  password: string
-}
+export * from './sign-payload.type';

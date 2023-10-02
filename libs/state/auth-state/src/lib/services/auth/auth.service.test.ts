@@ -14,7 +14,7 @@ describe('AuthService', () => {
 	const fakeApiUrl = 'http://auth.api.com'
 
 	beforeEach(() => {
-		service = new AuthService(provider(fakeHttpClient), fakeApiUrl)
+		service = new AuthService(provider(fakeHttpClient), { apiUrl: fakeApiUrl })
 	})
 
 	test('should call signIn method and returns correct user data', (done) => {
