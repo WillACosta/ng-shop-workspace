@@ -1,19 +1,40 @@
-# @ng-shop-workspace
+### @ng-shop-workspace
 
-### Nx CLI Commands
+This project servers as a demonstration of using micro-frontend applications powered by NX and Module Federation Plugin, this is a simple plant shop, that have features such
+authentication, cart shop and state management using NGXS library for that. Read more about technical resources below.
+
+### Screenshots
+
+<br/>
+   <img src="docs/images/screenshot.png" />
+<br/>
+
+### Technical Resources
+
+- Authentication API integration
+- Mono-repo managed by NX Workspaces
+- Micro-frontend approach with Module Federation
+- State Management with NGXS library
+- Tailwind CSS for create beautifully, responsive and accessible UI
+- Angular frontend application
+
+### How to execute
+
+1. Clone this repository
 
 ```shell
-yarn nx g @nx/angular:host $APP_NAME
-
-npx nx g @nx/angular:remote $APP_NAME \
---directory=apps/$APP_NAME \
---host=$HOST_NAME
-
-yarn nx g @nx/angular:setup-tailwind $REMOTE_APP
-
-# create library
-nx g @nx/angular:lib $LIB_PATH
-
-# create service for specific project
-nx g @nx/angular:service $SERVICE_NAME --project=$PATH_TO_PROJECT
+git clone https://github.com/WillACosta/ng-shop-workspace
 ```
+
+3. Run the following command
+
+```shell
+yarn install & yarn bootstrap
+```
+
+By executing this command, all the required dependencies will be installed, and then the application will execute on localhost:4200
+**you can find more detail in the `package.json` file**
+
+#
+
+_Feel free to help me improve and implement new features for this application, and so on. Thank you for being here._
