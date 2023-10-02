@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { PlantService } from '@modules/dashboard/data'
-import { ProductModel } from '@modules/dashboard/domain'
+import { ProductModel } from '@ng-shop-workspace/core-common'
 import { Observable, map } from 'rxjs'
 
 @Component({

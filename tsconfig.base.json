@@ -1,26 +1,28 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
-    "lib": ["es2020", "dom"],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": "./",
-    "paths": {
-      "@ng-shop-workspace/auth-state": ["libs/auth-state/src/index.ts"],
-      "@ng-shop-workspace/common-ui": ["libs/common-ui/src/index.ts"],
-      "@ng-shop-workspace/shop-state": ["libs/shop-state/src/index.ts"]
-    },
-    "types": ["node", "jest"],
-    "strictPropertyInitialization": false
-  },
-  "exclude": ["node_modules", "tmp"]
+	"compileOnSave": false,
+	"compilerOptions": {
+		"rootDir": ".",
+		"sourceMap": true,
+		"declaration": false,
+		"moduleResolution": "node",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"importHelpers": true,
+		"target": "es2015",
+		"module": "esnext",
+		"lib": ["es2020", "dom"],
+		"skipLibCheck": true,
+		"skipDefaultLibCheck": true,
+		"strictPropertyInitialization": false,
+		"baseUrl": "./",
+		"types": ["jest", "node"],
+		"paths": {
+			"@ng-shop-workspace/auth-state": ["./libs/state/auth-state/src/index.ts"],
+			"@ng-shop-workspace/shop-state": ["./libs/state/shop-state/src/index.ts"],
+			"@ng-shop-workspace/core-common": ["./libs/core/core-common/src/index.ts"],
+			"@ng-shop-workspace/core-test": ["./libs/core/core-test/src/index.ts"],
+			"@ng-shop-workspace/common-ui": ["./libs/core/common-ui/src/index.ts"],
+		}
+	},
+	"exclude": ["node_modules", "tmp"]
 }

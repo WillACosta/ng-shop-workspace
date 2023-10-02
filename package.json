@@ -6,6 +6,7 @@
     "start": "concurrently \"yarn:start:api\" \"yarn:start:all\"",
     "start:api": "json-server api/plant-api.json --watch",
     "start:all": "nx serve shell --devRemotes=auth,dashboard",
+    "start:dash": "nx serve dashboard",
     "test:auth-state": "nx test libs/auth-state",
     "test": "yarn test:auth-state"
   },

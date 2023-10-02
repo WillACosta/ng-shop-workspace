@@ -13,7 +13,11 @@
       "@environment": ["./src/environments/environment.ts"],
       "@core/*": ["./src/app/core/*"],
       "@modules/*": ["./src/app/modules/*"],
-      "@ng-shop-workspace/auth-state": ["../../libs/auth-state/src/index.ts"]
+      "@ng-shop-workspace/auth-state": ["../../libs/state/auth-state/src/index.ts"],
+			"@ng-shop-workspace/shop-state": ["../../libs/state/shop-state/src/index.ts"],
+			"@ng-shop-workspace/core-common": ["../../libs/core/core-common/src/index.ts"],
+			"@ng-shop-workspace/core-test": ["../../libs/core/core-test/src/index.ts"],
+			"@ng-shop-workspace/common-ui": ["../../libs/core/common-ui/src/index.ts"],
     }
   },
   "files": [],

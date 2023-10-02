@@ -20,7 +20,9 @@ import { LoginViewComponent } from './views'
       }
     ]),
     NgxsModule.forFeature([AuthState]),
-    SharedAuthStateModule.forRoot(environment.authApiUrl)
+    SharedAuthStateModule.forRoot({
+      apiUrl: environment.authApiUrl
+    })
   ],
   declarations: [LoginViewComponent]
 })
