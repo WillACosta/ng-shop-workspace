@@ -1,0 +1,26 @@
+<div class="bg-secondary p-8 sticky top-0">
+	<div
+		class="container mx-auto flex gap-3 justify-between items-center text-center cursor-pointer"
+		title="Shop Cart">
+		<button title="Back" *ngIf="shouldShowBackIcon" (click)="onClickBack()">
+			<i-feather
+				name="arrow-left"
+				class="text-primary hover:text-primary-dark">
+			</i-feather>
+		</button>
+
+		<ng-content select="[greeting]"></ng-content>
+
+		<span
+			*ngIf="shouldShowShopIcon"
+			class="relative inline-block"
+			(click)="onClickShopCart()">
+			<i-feather name="shopping-cart"></i-feather>
+
+			<span
+				class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">
+				{{ cartQuantity }}
+			</span>
+		</span>
+	</div>
+</div>

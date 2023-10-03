@@ -2,17 +2,28 @@ import { NgModule } from '@angular/core'
 
 import { FeatherModule } from 'angular-feather'
 
-import { Plus, Search, ShoppingBag, ShoppingCart } from 'angular-feather/icons'
+import {
+	ArrowLeft,
+	Edit,
+	Plus,
+	Search,
+	ShoppingBag,
+	ShoppingCart,
+	Trash
+} from 'angular-feather/icons'
 
 const icons = {
-  Search,
-  ShoppingBag,
-  ShoppingCart,
-  Plus
+	Search,
+	ShoppingBag,
+	ShoppingCart,
+	Plus,
+	Trash,
+	Edit,
+	ArrowLeft
 }
 
 @NgModule({
-  imports: [FeatherModule.pick(icons)],
-  exports: [FeatherModule]
+	imports: [FeatherModule.pick(icons)],
+	exports: [FeatherModule]
 })
 export class IconsModule {}

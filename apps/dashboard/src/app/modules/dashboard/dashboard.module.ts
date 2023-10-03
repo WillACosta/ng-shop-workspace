@@ -2,7 +2,10 @@ import { AsyncPipe, CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
-import { IconsModule } from '@ng-shop-workspace/common-ui'
+import {
+	HeaderComponentModule,
+	IconsModule
+} from '@ng-shop-workspace/common-ui'
 
 import {
 	LibsShopStateModule,
@@ -32,8 +35,10 @@ import { PlantListViewComponent } from './views/plant-list/plant-list-view.compo
 					)
 			}
 		]),
-		LibsShopStateModule.forRoot()
+		LibsShopStateModule.forRoot(),
+		HeaderComponentModule
 	],
-	providers: [ShopFacade, ProductFacade]
+	providers: [ShopFacade, ProductFacade],
+	exports: [ListHeaderViewComponent]
 })
 export class DashboardModule {}

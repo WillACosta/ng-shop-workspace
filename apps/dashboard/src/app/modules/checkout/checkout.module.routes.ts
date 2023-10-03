@@ -1,5 +1,5 @@
 import { Route } from '@angular/router'
-import { CheckoutProductsViewComponent } from './views'
+import { CheckoutProductsViewComponent } from './view'
 
 export const moduleRoutes: Route[] = [
 	{
