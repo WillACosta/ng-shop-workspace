@@ -1,6 +1,7 @@
 <ng-shop-workspace-header-component
 	[cartQuantity]="(cartQuantity$ | async) ?? 0"
-	[shouldShowShopIcon]="true">
+	[shouldShowShopIcon]="true"
+	(clickShopCart)="redirectToCheckout()">
 	<div class="text-lg" greeting>
 		Welcome, {{ userName }} <span class="text-primary font-bold">;)</span>
 	</div>
