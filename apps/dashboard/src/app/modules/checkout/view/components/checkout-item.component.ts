@@ -21,4 +21,12 @@ export class CheckoutItemComponent {
 
 	@Output() deleteItem = new EventEmitter()
 	@Output() editItem = new EventEmitter()
+
+	onDeleteItem() {
+		this.deleteItem.emit()
+	}
+
+	onEditItem() {
+		this.editItem.emit()
+	}
 }

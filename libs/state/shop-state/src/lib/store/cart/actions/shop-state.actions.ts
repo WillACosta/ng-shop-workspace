@@ -1,10 +1,11 @@
+import { ItemCartModel } from '@ng-shop-workspace/shop-state';
 export class GetProductsAction {
   static readonly type = '[SHOP] get-products'
 }
 
 export class AddToCartAction {
   static readonly type = '[SHOP] add-to-cart'
-  constructor(public id: number) {}
+  constructor(public item: ItemCartModel) {}
 }
 
 export class RemoveFromCartAction {

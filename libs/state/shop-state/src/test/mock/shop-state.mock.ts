@@ -1,38 +1,51 @@
+import { ItemCartModel, createCartItem } from '@ng-shop-workspace/shop-state'
+
 import {
-  AddToCartAction,
-  RemoveFromCartAction
+	AddToCartAction,
+	RemoveFromCartAction
 } from '../../lib/store/cart/actions'
 
-export abstract class MockShopState {
-  static defaultState = {
-    checkedOut: false,
-    items: [],
-    total: 0
-  }
+export abstract class MockCartData {
+	static defaultState = {
+		checkedOut: false,
+		items: [],
+		total: 0
+	}
 
-  static addToCartAction = new AddToCartAction(1)
-  static removeFromCartAction = new RemoveFromCartAction(1)
+	static addToCartAction = new AddToCartAction(
+		createCartItem({
+			id: 1,
+			name: 'Test Item',
+			image: 'http.fake.path',
+			price: 140,
+			quantity: 1
+		})
+	)
 
-  static fakeItems = [
-    {
-      id: 1,
-      image: 'http.fake.path',
-      price: 200,
-      quantity: 1,
-      total: 200
-    },
-    {
-      id: 2,
-      image: 'http.fake.path',
-      price: 140,
-      quantity: 1,
-      total: 140
-    }
-  ]
+	static removeFromCartAction = new RemoveFromCartAction(1)
 
-  static stateWithData = {
-    checkedOut: false,
-    items: MockShopState.fakeItems,
-    total: 0
-  }
+	static fakeItems: ItemCartModel[] = [
+		createCartItem({
+			id: 1,
+			name: 'Test Item',
+			image: 'http.fake.path',
+			price: 140,
+			quantity: 1,
+			total: 140
+		}),
+		createCartItem({
+			id: 2,
+			name: 'Test Item',
+			image: 'http.fake.path',
+			price: 140,
+			quantity: 1,
+			total: 140
+		})
+	]
+
+	static stateWithData = {
+		checkedOut: false,
+		items: MockCartData.fakeItems,
+		total: 0
+	}
 }

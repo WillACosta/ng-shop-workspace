@@ -10,6 +10,7 @@ export class ListHeaderViewComponent {
 	constructor(private _shopFacade: ShopFacade, private _router: Router) {}
 
 	cartQuantity$ = this._shopFacade.cartTotalQuantity$
+	cartTotal$ = this._shopFacade.cartTotal$
 
 	//TODO: consume auth-state -> name
 	userName = 'Will'

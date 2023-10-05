@@ -1,6 +1,6 @@
 import { MockStateContext } from '@ng-shop-workspace/core-test'
 
-import { MockShopState } from '../../../../test'
+import { MockCartData } from '../../../../test'
 import { createCartItem } from '../../../models/item-cart.model'
 import { ShopState } from './shop.state'
 
@@ -14,61 +14,73 @@ describe('ShopState', () => {
 	})
 
 	describe(':state selectors', () => {
-		test('should select cartTotal and returns 340', () => {
-			const actual = ShopState.cartTotal(MockShopState.stateWithData)
-			expect(actual).toEqual(340)
+		test('should select cartTotal and returns 280', () => {
+			const actual = ShopState.cartTotal(MockCartData.stateWithData)
+			expect(actual).toEqual(280)
 		})
 
 		test('should select cartTotalQuantity and returns 2', () => {
-			const actual = ShopState.cartTotalQuantity(MockShopState.stateWithData)
+			const actual = ShopState.cartTotalQuantity(MockCartData.stateWithData)
 			expect(actual).toEqual(2)
+		})
+
+		test('should select cartItems and returns an Array<ItemCartModel>', () => {
+			const actual = ShopState.cartItems(MockCartData.stateWithData)
+			expect(actual).toEqual(MockCartData.fakeItems)
 		})
 	})
 
 	describe(':state actions', () => {
 		test('should add new item on cart, if they not exists', () => {
-			stateContext.getState.mockReturnValue(MockShopState.defaultState)
+			stateContext.getState.mockReturnValue(MockCartData.defaultState)
 
-			const newItem = createCartItem({ id: 1 })
-			state.addToCart(stateContext, MockShopState.addToCartAction)
+			const expectedItem = createCartItem({
+				id: 1,
+				name: 'Test Item',
+				image: 'http.fake.path',
+				price: 140
+			})
+
+			state.addToCart(stateContext, MockCartData.addToCartAction)
 
 			expect(stateContext.patchState).toBeCalledWith({
-				items: [...MockShopState.defaultState.items, newItem]
+				items: [...MockCartData.defaultState.items, expectedItem]
 			})
 		})
 
 		test('should update quantity and total for specific item if already exists in the state', () => {
 			stateContext.getState.mockReturnValue({
-				...MockShopState.defaultState,
-				items: MockShopState.fakeItems
+				...MockCartData.defaultState,
+				items: MockCartData.fakeItems
 			})
 
-			state.addToCart(stateContext, MockShopState.addToCartAction)
+			state.addToCart(stateContext, MockCartData.addToCartAction)
 
 			expect(stateContext.patchState).toBeCalledWith({
 				items: [
 					{
 						id: 1,
+						name: 'Test Item',
 						image: 'http.fake.path',
-						price: 200,
+						price: 140,
 						quantity: 2,
-						total: 400
+						total: 280
 					},
-					MockShopState.fakeItems[1]
+					MockCartData.fakeItems[1]
 				]
 			})
 		})
 
 		test('should remove specific item from cart state', () => {
 			stateContext.getState.mockReturnValue({
-				...MockShopState.defaultState,
-				items: MockShopState.fakeItems
+				...MockCartData.defaultState,
+				items: MockCartData.fakeItems
 			})
 
-			state.removeFromCart(stateContext, MockShopState.addToCartAction)
+			state.removeFromCart(stateContext, MockCartData.removeFromCartAction)
 
 			expect(stateContext.patchState).toBeCalledWith({
-				items: [MockShopState.fakeItems[1]]
+				items: [MockCartData.fakeItems[1]]
 			})
 		})
 	})

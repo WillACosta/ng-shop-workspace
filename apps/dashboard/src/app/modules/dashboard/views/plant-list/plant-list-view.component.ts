@@ -19,11 +19,7 @@ export class PlantListViewComponent implements OnInit {
 	}
 
 	addToCart(item: ProductModel) {
-		this._shopFacade.addToCart(item.id)
-	}
-
-	removeFromCart() {
-		throw Error()
+		this._shopFacade.addToCart(item)
 	}
 
 	private _getAllProducts() {

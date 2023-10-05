@@ -5,69 +5,75 @@ import { createCartItem } from '../../../models/item-cart.model'
 import { AddToCartAction, RemoveFromCartAction } from '../actions'
 
 @State<ShopStateModel>({
-  name: 'shop',
-  defaults: {
-    checkedOut: false,
-    items: [],
-    total: 0
-  }
+	name: 'shop',
+	defaults: {
+		checkedOut: false,
+		items: [],
+		total: 0
+	}
 })
 @Injectable()
 export class ShopState {
-  @Selector()
-  static cartTotal(state: ShopStateModel) {
-    return state.items.reduce((acc, curr) => acc + curr.price, 0)
-  }
+	@Selector()
+	static cartTotal(state: ShopStateModel) {
+		return state.items.reduce((acc, curr) => acc + curr.total, 0)
+	}
 
-  @Selector()
-  static cartTotalQuantity(state: ShopStateModel) {
-    return state.items.reduce((acc, curr) => acc + curr.quantity, 0)
-  }
+	@Selector()
+	static cartTotalQuantity(state: ShopStateModel) {
+		return state.items.reduce((acc, curr) => acc + curr.quantity, 0)
+	}
 
-  @Action(AddToCartAction)
-  addToCart(
-    { getState, patchState }: StateContext<ShopStateModel>,
-    { id }: AddToCartAction
-  ) {
-    const actualState = getState()
-    const actualItems = actualState.items
+	@Selector()
+	static cartItems(state: ShopStateModel) {
+		return state.items
+	}
 
-    const itemIndexFound = actualItems.findIndex((el) => id === el.id)
+	@Action(AddToCartAction)
+	addToCart(
+		{ getState, patchState }: StateContext<ShopStateModel>,
+		{ item }: AddToCartAction
+	) {
+		const currentState = getState()
+		const currentItems = currentState.items
+		const { id } = item
 
-    if (itemIndexFound > -1) {
-      return patchState({
-        items: actualItems.map((item, index) => {
-          if (index !== itemIndexFound) {
-            return item
-          }
+		const itemIndexFound = currentItems.findIndex((el) => id === el.id)
 
-          const newQuantity = item.quantity + 1
+		if (itemIndexFound > -1) {
+			return patchState({
+				items: currentItems.map((item, index) => {
+					if (index !== itemIndexFound) {
+						return item
+					}
 
-          return {
-            ...item,
-            quantity: newQuantity,
-            total: newQuantity * item.price
-          }
-        })
-      })
-    }
+					const newQuantity = item.quantity + 1
 
-    const newItem = createCartItem({ id })
-    return patchState({
-      items: [...actualItems, newItem]
-    })
-  }
+					return {
+						...item,
+						quantity: newQuantity,
+						total: newQuantity * item.price
+					}
+				})
+			})
+		}
 
-  @Action(RemoveFromCartAction)
-  removeFromCart(
-    { getState, patchState }: StateContext<ShopStateModel>,
-    { id }: RemoveFromCartAction
-  ) {
-    const actualState = getState()
-    const actualItems = actualState.items
+		const newItem = createCartItem(item)
+		return patchState({
+			items: [...currentItems, newItem]
+		})
+	}
 
-    patchState({
-      items: actualItems.filter((el) => el.id != id)
-    })
-  }
+	@Action(RemoveFromCartAction)
+	removeFromCart(
+		{ getState, patchState }: StateContext<ShopStateModel>,
+		{ id }: RemoveFromCartAction
+	) {
+		const actualState = getState()
+		const actualItems = actualState.items
+
+		patchState({
+			items: actualItems.filter((el) => el.id != id)
+		})
+	}
 }

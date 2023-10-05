@@ -6,7 +6,6 @@ import {
 	Output
 } from '@angular/core'
 
-
 @Component({
 	selector: 'ng-shop-workspace-header-component',
 	templateUrl: './header.component.html',
@@ -17,6 +16,7 @@ export class HeaderComponent {
 	@Input() shouldShowBackIcon = false
 	@Input() shouldShowShopIcon = false
 	@Input() cartQuantity?: number
+	@Input() cartTotal?: number
 
 	@Output() clickShopCart = new EventEmitter()
 	@Output() clickBack = new EventEmitter()

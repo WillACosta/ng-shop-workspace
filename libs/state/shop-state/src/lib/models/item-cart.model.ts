@@ -9,8 +9,8 @@ export type ItemCartModel = {
 
 export function createCartItem(params: Partial<ItemCartModel>) {
 	return {
+		...params,
 		quantity: 1,
-		total: 0,
-		...params
+		total: params.price
 	} as ItemCartModel
 }

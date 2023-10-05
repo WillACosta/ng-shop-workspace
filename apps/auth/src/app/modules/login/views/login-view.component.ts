@@ -1,17 +1,17 @@
+import { resolveAppImagePath } from '@ng-shop-workspace/core-common'
+
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import { Component, OnInit, isDevMode } from '@angular/core'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
 
+import { ToastrService } from 'ngx-toastr'
 import { tap } from 'rxjs'
 
-import { resolveAppImagePath } from '@core/functions'
-import { ViewUiState } from '../../../core/constants/view-ui-state'
-
+import { environment } from '@environment'
 import { AuthFacade } from '@ng-shop-workspace/auth-state'
-
-import { ToastrService } from 'ngx-toastr'
+import { ViewUiState } from '../../../core/constants/view-ui-state'
 
 @Component({
 	selector: 'ng-shop-workspace-login-view',
@@ -20,7 +20,10 @@ import { ToastrService } from 'ngx-toastr'
 export class LoginViewComponent implements OnInit {
 	viewUiState = ViewUiState.idle
 	viewUiStateType = ViewUiState
-	welcomeImagePath = resolveAppImagePath('welcome')
+	welcomeImagePath = resolveAppImagePath({
+		baseUrl: environment.baseUrl,
+		resourceName: 'welcome'
+	})
 
 	loginForm: FormGroup<{
 		email: FormControl<string | null>
