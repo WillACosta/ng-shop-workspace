@@ -4,7 +4,7 @@ This project servers as a demonstration of using micro-frontend applications pow
 authentication, cart shop and state management using NGXS library for that. Read more about technical resources below.
 
 <center>
-  <img src="docs/images/screenshot.png" width="700" alt="screenshot" style="margin-top: 35px"/>
+  <img src="docs/images/screenshot.png" alt="screenshot" style="margin-top: 35px"/>
 </center>
 
 ### Table of contents
