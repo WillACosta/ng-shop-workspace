@@ -2170,6 +2170,13 @@
   dependencies:
     tslib "^2.2.0"
 
+"@ngxs/logger-plugin@^3.8.1":
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/@ngxs/logger-plugin/-/logger-plugin-3.8.1.tgz#837405f2ab61d5c901a8ccb2617c40c48da4780d"
+  integrity sha512-ySgt8jUkLQJcp3jxg1a1d7pkD141ltHeOHdtjrTP4MT4ICazE9s6NJV2Gzb616R/IYOVES4xUA8XSg0+ng8Pzg==
+  dependencies:
+    tslib "^2.2.0"
+
 "@ngxs/store@^3.8.1":
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.8.1.tgz#dc4b823fc179149c32ac6158149877dda615abd2"
