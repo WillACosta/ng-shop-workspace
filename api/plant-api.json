@@ -1,89 +1,178 @@
 {
-  "plants": {
-    "data": [
-      {
-        "id": 1,
-        "name": "Orquídea",
-        "description": "Uma bela orquídea com flores exuberantes, perfeita para iluminar qualquer ambiente. Suas cores vibrantes e delicadas fazem dela uma escolha encantadora.",
-        "image": "http://localhost:4202/assets/images/plant-a.svg",
-        "price": 25.99
-      },
-      {
-        "id": 2,
-        "name": "Suculenta",
-        "description": "Uma suculenta resistente e fácil de cuidar. Ideal para quem busca uma planta que requer pouca manutenção. Suas folhas carnudas armazenam água, proporcionando maior durabilidade.",
-        "image": "http://localhost:4202/assets/images/plant-b.svg",
-        "price": 12.5
-      },
-      {
-        "id": 3,
-        "name": "Jasmim",
-        "description": "O jasmim, conhecido por seu perfume envolvente, é perfeito para jardins e áreas externas. Suas flores brancas exalam uma fragrância doce e relaxante.",
-        "image": "http://localhost:4202/assets/images/plant-c.svg",
-        "price": 18.75
-      },
-      {
-        "id": 4,
-        "name": "Lírio",
-        "description": "O lírio, símbolo de pureza e elegância, é uma escolha sofisticada para qualquer ambiente. Suas flores majestosas e longas hastes criam um visual imponente.",
-        "image": "http://localhost:4202/assets/images/plant-d.svg",
-        "price": 30.0
-      },
-      {
-        "id": 5,
-        "name": "Cacto",
-        "description": "O cacto, adaptado a climas áridos, é uma adição única e moderna à sua coleção de plantas. Suas formas intrigantes e poucas exigências de cuidado tornam-no uma opção popular.",
-        "image": "http://localhost:4202/assets/images/plant-e.svg",
-        "price": 9.99
-      },
-      {
-        "id": 6,
-        "name": "Ficus",
-        "description": "O ficus, com suas folhas exuberantes e brilhantes, é uma planta de interior versátil. Adapta-se a diferentes condições de luz e adiciona um toque de frescor à decoração.",
-        "image": "http://localhost:4202/assets/images/plant-f.svg",
-        "price": 22.5
-      },
-      {
-        "id": 7,
-        "name": "Violeta",
-        "description": "A violeta, com suas flores pequenas e vibrantes, é perfeita para adicionar cor aos espaços internos. Fácil de cuidar, é uma escolha popular entre os amantes de plantas.",
-        "image": "http://localhost:4202/assets/images/plant-g.svg",
-        "price": 15.99
-      },
-      {
-        "id": 8,
-        "name": "Samambaia",
-        "description": "A samambaia, com suas folhas elegantes e delicadas, traz uma sensação de frescor e naturalidade. Ideal para áreas sombreadas, adiciona um toque de natureza a qualquer ambiente.",
-        "image": "http://localhost:4202/assets/images/plant-h.svg",
-        "price": 17.25
-      },
-      {
-        "id": 9,
-        "name": "Girassol",
-        "description": "O girassol, símbolo de vitalidade e alegria, é uma escolha radiante para jardins ensolarados. Suas flores amarelas seguem o movimento do sol, criando um espetáculo visual encantador.",
-        "image": "http://localhost:4202/assets/images/plant-i.svg",
-        "price": 28.99
-      },
-      {
-        "id": 10,
-        "name": "Bromélia",
-        "description": "A bromélia, com suas cores vivas e formato único, é uma planta tropical que adiciona um toque exótico à decoração. Suas folhas formam uma roseta elegante e duradoura.",
-        "image": "http://localhost:4202/assets/images/plant-j.svg",
-        "price": 24.5
-      },
-      {
-        "id": 11,
-        "name": "Peperômia",
-        "description": "A peperômia, com suas folhas pequenas e padrões interessantes, é uma planta de interior charmosa. Suporta ambientes com pouca luz e é uma escolha popular para espaços compactos.",
-        "image": "http://localhost:4202/assets/images/plant-k.svg",
-        "price": 14.75
-      },
-      {
-        "id": 12,
-        "name": "Azaleia",
-        "description": "A azaleia, com suas flores abundantes e coloridas, é uma opção encantadora para jardins e varandas. Sua floração exuberante adiciona um toque de beleza à paisagem.",
-        "image": "http://localhost:4202/assets/images/plant-l.svg",
-        "price": 19.99
-      }
-    ]
-  }}
+	"plants-pt": {
+		"data": [
+			{
+				"id": 1,
+				"name": "Orquídea",
+				"description": "Uma bela orquídea com flores exuberantes, perfeita para iluminar qualquer ambiente. Suas cores vibrantes e delicadas fazem dela uma escolha encantadora.",
+				"image": "http://localhost:4202/assets/images/plant-a.svg",
+				"price": 25.99
+			},
+			{
+				"id": 2,
+				"name": "Suculenta",
+				"description": "Uma suculenta resistente e fácil de cuidar. Ideal para quem busca uma planta que requer pouca manutenção. Suas folhas carnudas armazenam água, proporcionando maior durabilidade.",
+				"image": "http://localhost:4202/assets/images/plant-b.svg",
+				"price": 12.5
+			},
+			{
+				"id": 3,
+				"name": "Jasmim",
+				"description": "O jasmim, conhecido por seu perfume envolvente, é perfeito para jardins e áreas externas. Suas flores brancas exalam uma fragrância doce e relaxante.",
+				"image": "http://localhost:4202/assets/images/plant-c.svg",
+				"price": 18.75
+			},
+			{
+				"id": 4,
+				"name": "Lírio",
+				"description": "O lírio, símbolo de pureza e elegância, é uma escolha sofisticada para qualquer ambiente. Suas flores majestosas e longas hastes criam um visual imponente.",
+				"image": "http://localhost:4202/assets/images/plant-d.svg",
+				"price": 30.0
+			},
+			{
+				"id": 5,
+				"name": "Cacto",
+				"description": "O cacto, adaptado a climas áridos, é uma adição única e moderna à sua coleção de plantas. Suas formas intrigantes e poucas exigências de cuidado tornam-no uma opção popular.",
+				"image": "http://localhost:4202/assets/images/plant-e.svg",
+				"price": 9.99
+			},
+			{
+				"id": 6,
+				"name": "Ficus",
+				"description": "O ficus, com suas folhas exuberantes e brilhantes, é uma planta de interior versátil. Adapta-se a diferentes condições de luz e adiciona um toque de frescor à decoração.",
+				"image": "http://localhost:4202/assets/images/plant-f.svg",
+				"price": 22.5
+			},
+			{
+				"id": 7,
+				"name": "Violeta",
+				"description": "A violeta, com suas flores pequenas e vibrantes, é perfeita para adicionar cor aos espaços internos. Fácil de cuidar, é uma escolha popular entre os amantes de plantas.",
+				"image": "http://localhost:4202/assets/images/plant-g.svg",
+				"price": 15.99
+			},
+			{
+				"id": 8,
+				"name": "Samambaia",
+				"description": "A samambaia, com suas folhas elegantes e delicadas, traz uma sensação de frescor e naturalidade. Ideal para áreas sombreadas, adiciona um toque de natureza a qualquer ambiente.",
+				"image": "http://localhost:4202/assets/images/plant-h.svg",
+				"price": 17.25
+			},
+			{
+				"id": 9,
+				"name": "Girassol",
+				"description": "O girassol, símbolo de vitalidade e alegria, é uma escolha radiante para jardins ensolarados. Suas flores amarelas seguem o movimento do sol, criando um espetáculo visual encantador.",
+				"image": "http://localhost:4202/assets/images/plant-i.svg",
+				"price": 28.99
+			},
+			{
+				"id": 10,
+				"name": "Bromélia",
+				"description": "A bromélia, com suas cores vivas e formato único, é uma planta tropical que adiciona um toque exótico à decoração. Suas folhas formam uma roseta elegante e duradoura.",
+				"image": "http://localhost:4202/assets/images/plant-j.svg",
+				"price": 24.5
+			},
+			{
+				"id": 11,
+				"name": "Peperômia",
+				"description": "A peperômia, com suas folhas pequenas e padrões interessantes, é uma planta de interior charmosa. Suporta ambientes com pouca luz e é uma escolha popular para espaços compactos.",
+				"image": "http://localhost:4202/assets/images/plant-k.svg",
+				"price": 14.75
+			},
+			{
+				"id": 12,
+				"name": "Azaleia",
+				"description": "A azaleia, com suas flores abundantes e coloridas, é uma opção encantadora para jardins e varandas. Sua floração exuberante adiciona um toque de beleza à paisagem.",
+				"image": "http://localhost:4202/assets/images/plant-l.svg",
+				"price": 19.99
+			}
+		]
+	},
+	"plants-en": {
+		"data": [
+			{
+				"id": 1,
+				"name": "Orchid",
+				"description": "A beautiful orchid with lush flowers, perfect for brightening any environment. Its vibrant and delicate colors make it a charming choice.",
+				"image": "http://localhost:4202/assets/images/plant-a.svg",
+				"price": 25.99
+			},
+			{
+				"id": 2,
+				"name": "Succulent",
+				"description": "A resilient and easy-to-care-for succulent. Ideal for those seeking a low-maintenance plant. Its fleshy leaves store water, providing greater durability.",
+				"image": "http://localhost:4202/assets/images/plant-b.svg",
+				"price": 12.5
+			},
+			{
+				"id": 3,
+				"name": "Jasmine",
+				"description": "Jasmine, known for its captivating perfume, is perfect for gardens and outdoor areas. Its white flowers emit a sweet and relaxing fragrance.",
+				"image": "http://localhost:4202/assets/images/plant-c.svg",
+				"price": 18.75
+			},
+			{
+				"id": 4,
+				"name": "Lily",
+				"description": "The lily, a symbol of purity and elegance, is a sophisticated choice for any environment. Its majestic flowers and long stems create an imposing visual.",
+				"image": "http://localhost:4202/assets/images/plant-d.svg",
+				"price": 30.0
+			},
+			{
+				"id": 5,
+				"name": "Cactus",
+				"description": "The cactus, adapted to arid climates, is a unique and modern addition to your plant collection. Its intriguing shapes and low care requirements make it a popular choice.",
+				"image": "http://localhost:4202/assets/images/plant-e.svg",
+				"price": 9.99
+			},
+			{
+				"id": 6,
+				"name": "Ficus",
+				"description": "The ficus, with its lush and shiny leaves, is a versatile indoor plant. It adapts to different light conditions and adds a touch of freshness to the decor.",
+				"image": "http://localhost:4202/assets/images/plant-f.svg",
+				"price": 22.5
+			},
+			{
+				"id": 7,
+				"name": "Violet",
+				"description": "The violet, with its small and vibrant flowers, is perfect for adding color to indoor spaces. Easy to care for, it is a popular choice among plant lovers.",
+				"image": "http://localhost:4202/assets/images/plant-g.svg",
+				"price": 15.99
+			},
+			{
+				"id": 8,
+				"name": "Fern",
+				"description": "The fern, with its elegant and delicate leaves, brings a sense of freshness and naturalness. Ideal for shaded areas, it adds a touch of nature to any environment.",
+				"image": "http://localhost:4202/assets/images/plant-h.svg",
+				"price": 17.25
+			},
+			{
+				"id": 9,
+				"name": "Sunflower",
+				"description": "The sunflower, a symbol of vitality and joy, is a radiant choice for sunny gardens. Its yellow flowers follow the sun's movement, creating a charming visual spectacle.",
+				"image": "http://localhost:4202/assets/images/plant-i.svg",
+				"price": 28.99
+			},
+			{
+				"id": 10,
+				"name": "Bromeliad",
+				"description": "The bromeliad, with its vivid colors and unique shape, is a tropical plant that adds an exotic touch to the decor. Its leaves form an elegant and lasting rosette.",
+				"image": "http://localhost:4202/assets/images/plant-j.svg",
+				"price": 24.5
+			},
+			{
+				"id": 11,
+				"name": "Peperomia",
+				"description": "The peperomia, with its small leaves and interesting patterns, is a charming indoor plant. It thrives in low-light environments and is a popular choice for compact spaces.",
+				"image": "http://localhost:4202/assets/images/plant-k.svg",
+				"price": 14.75
+			},
+			{
+				"id": 12,
+				"name": "Azalea",
+				"description": "The azalea, with its abundant and colorful flowers, is a charming option for gardens and balconies. Its lush flowering adds a touch of beauty to the landscape.",
+				"image": "http://localhost:4202/assets/images/plant-l.svg",
+				"price": 19.99
+			}
+		]
+	}
+}
