@@ -3,7 +3,8 @@
 <div class="h-screen">
 	<ng-shop-workspace-header-component
 		[shouldShowBackIcon]="true"
-		(clickBack)="onBack()">
+		(clickBack)="onBack()"
+	>
 	</ng-shop-workspace-header-component>
 
 	<div class="container mx-auto">
@@ -36,13 +37,14 @@
 						[quantity]="item.quantity"
 						[itemImage]="item.image"
 						[total]="item.total"
-						(deleteItem)="onDeleteItem(item.id)">
+						(deleteItem)="onDeleteItem(item.id)"
+					>
 					</ng-shop-workspace-checkout-item>
 				</div>
 
 				<button
 					*ngIf="items.length"
-					class="bg-primary text-secondary rounded-xl cursor-pointer hover:bg-primary-dark transition ease-in delay-75 p-5"
+					class="sh-btn-primary"
 					title="Proceed to Payment">
 					Next
 				</button>

@@ -1,0 +1,28 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.sh-btn-primary {
+		@apply bg-primary text-white
+		rounded-xl
+		cursor-pointer
+		hover:bg-primary-dark
+		transition ease-in delay-75
+		w-full
+		p-5;
+	}
+
+	.sh-text-field {
+		@apply border rounded w-full py-4 px-3 text-muted focus:outline-none focus:border-primary;
+	}
+
+	.sh-icon-button {
+		@apply sh-btn-primary flex items-center justify-center w-[45px] h-[45px] rounded-[100%] p-1;
+	}
+}

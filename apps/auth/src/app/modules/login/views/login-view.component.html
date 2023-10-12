@@ -1,115 +1,115 @@
 <div class="container mx-auto h-screen max-sm:px-5">
-  <div
-    class="flex flex-col lg:flex-row lg:justify-center lg:items-center lg:h-screen"
-  >
-    <div class="lg:flex-1">
-      <img [src]="welcomeImagePath" class="lg:w-[600px]" />
-      <h1 class="font-bold text-xl">Let's Get Started</h1>
-      <p class="text-muted">Fill with your credentials</p>
-    </div>
+	<div
+		class="flex flex-col lg:flex-row lg:justify-center lg:items-center lg:h-screen"
+	>
+		<div class="lg:flex-1">
+			<img [src]="welcomeImagePath" class="lg:w-[600px]" />
+			<h1 class="font-bold text-xl">Let's Get Started</h1>
+			<p class="text-muted">Fill with your credentials</p>
+		</div>
 
-    <form [formGroup]="loginForm" class="my-8 lg:flex-1">
-      <div>
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
-          Email
-        </label>
+		<form [formGroup]="loginForm" class="my-8 lg:flex-1">
+			<div>
+				<label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+					Email
+				</label>
 
-        <input
-          class="border rounded w-full py-4 px-3 text-muted focus:outline-none focus:border-primary"
-          formControlName="email"
-          id="email"
-          type="text"
-          placeholder="exemplo@email.com"
-          [ngClass]="{
-            'border-red-500':
-              loginForm.controls.email.invalid &&
-              loginForm.controls.email.touched
-          }"
-        />
+				<input
+					class="sh-text-field"
+					formControlName="email"
+					id="email"
+					type="text"
+					placeholder="exemplo@email.com"
+					[ngClass]="{
+						'border-red-500':
+							loginForm.controls.email.invalid &&
+							loginForm.controls.email.touched
+					}"
+				/>
 
-        <p
-          *ngIf="
-            loginForm.controls.email.invalid && loginForm.controls.email.touched
-          "
-          class="text-red-500 text-xs italic mt-3"
-        >
-          <span *ngIf="loginForm.controls.email.value?.length; else blankEmail"
-            >invalid email</span
-          >
-          <ng-template #blankEmail>please type your email</ng-template>
-        </p>
-      </div>
+				<p
+					*ngIf="
+						loginForm.controls.email.invalid && loginForm.controls.email.touched
+					"
+					class="text-red-500 text-xs italic mt-3"
+				>
+					<span *ngIf="loginForm.controls.email.value?.length; else blankEmail"
+						>invalid email</span
+					>
+					<ng-template #blankEmail>please type your email</ng-template>
+				</p>
+			</div>
 
-      <div class="my-12">
-        <label
-          class="block text-gray-700 text-sm font-bold mb-2"
-          for="password"
-        >
-          Senha
-        </label>
+			<div class="my-12">
+				<label
+					class="block text-gray-700 text-sm font-bold mb-2"
+					for="password"
+				>
+					Senha
+				</label>
 
-        <div class="flex flex-col items-end gap-4">
-          <input
-            class="border rounded w-full py-4 px-3 text-muted focus:outline-none focus:border-primary"
-            formControlName="password"
-            id="password"
-            type="password"
-            placeholder="******************"
-            [ngClass]="{
-              'border-red-500':
-                loginForm.controls.password.invalid &&
-                loginForm.controls.password.touched
-            }"
-          />
+				<div class="flex flex-col items-end gap-4">
+					<input
+						class="sh-text-field"
+						formControlName="password"
+						id="password"
+						type="password"
+						placeholder="******************"
+						[ngClass]="{
+							'border-red-500':
+								loginForm.controls.password.invalid &&
+								loginForm.controls.password.touched
+						}"
+					/>
 
-          <a
-            (click)="onClickForgottenPassword()"
-            class="inline-block align-baseline text-sm text-primary hover:text-primary-dark cursor-pointer"
-          >
-            forgot your password?
-          </a>
-        </div>
+					<a
+						(click)="onClickForgottenPassword()"
+						class="inline-block align-baseline text-sm text-primary hover:text-primary-dark cursor-pointer"
+					>
+						forgot your password?
+					</a>
+				</div>
 
-        <p
-          *ngIf="
-            loginForm.controls.password.invalid &&
-            loginForm.controls.password.touched
-          "
-          class="text-red-500 text-xs italic"
-        >
-          please type your password
-        </p>
-      </div>
+				<p
+					*ngIf="
+						loginForm.controls.password.invalid &&
+						loginForm.controls.password.touched
+					"
+					class="text-red-500 text-xs italic"
+				>
+					please type your password
+				</p>
+			</div>
 
-      <div class="flex items-center justify-between">
-        <button
-          *ngIf="viewUiState !== viewUiStateType.loading"
-          (click)="onClickSignIn()"
-          class="bg-primary hover:bg-primary-dark text-white p-4 rounded-xl focus:outline-none w-full transition ease-in delay-75"
-          type="button"
-        >
-          Login
-        </button>
+			<div class="flex items-center justify-between">
+				<button
+					*ngIf="viewUiState !== viewUiStateType.loading"
+					(click)="onClickSignIn()"
+					class="sh-btn-primary"
+					type="button"
+				>
+					Login
+				</button>
 
-        <button
-          *ngIf="viewUiState === viewUiStateType.loading"
-          type="button"
-          class="bg-primary flex justify-center gap-4 hover:bg-primary-dark text-white p-4 rounded-xl focus:outline-none w-full transition ease-in delay-75"
-          disabled
-        >
-          <svg class="animate-spin w-6 h-6 fill-white" viewBox="3 3 18 18">
-            <path
-              class="opacity-20"
-              d="M12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z"
-            ></path>
+				<button
+					*ngIf="viewUiState === viewUiStateType.loading"
+					type="button"
+					class="sh-btn-primary flex justify-center gap-4"
+					disabled
+				>
+					<svg class="animate-spin w-6 h-6 fill-white" viewBox="3 3 18 18">
+						<path
+							class="opacity-20"
+							d="M12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z"
+						></path>
 
-            <path
-              d="M16.9497 7.05015C14.2161 4.31648 9.78392 4.31648 7.05025 7.05015C6.65973 7.44067 6.02656 7.44067 5.63604 7.05015C5.24551 6.65962 5.24551 6.02646 5.63604 5.63593C9.15076 2.12121 14.8492 2.12121 18.364 5.63593C18.7545 6.02646 18.7545 6.65962 18.364 7.05015C17.9734 7.44067 17.3403 7.44067 16.9497 7.05015Z"
-            ></path>
-          </svg>
-          processing...
-        </button>
-      </div>
-    </form>
-  </div>
+						<path
+							d="M16.9497 7.05015C14.2161 4.31648 9.78392 4.31648 7.05025 7.05015C6.65973 7.44067 6.02656 7.44067 5.63604 7.05015C5.24551 6.65962 5.24551 6.02646 5.63604 5.63593C9.15076 2.12121 14.8492 2.12121 18.364 5.63593C18.7545 6.02646 18.7545 6.65962 18.364 7.05015C17.9734 7.44067 17.3403 7.44067 16.9497 7.05015Z"
+						></path>
+					</svg>
+					processing...
+				</button>
+			</div>
+		</form>
+	</div>
 </div>
