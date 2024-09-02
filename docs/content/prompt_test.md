@@ -65,26 +65,26 @@
 				"environment": "Indoor",
 				"flowering_season": "Year-round"
 			},
-			"match_percentage": 1
+			"match_percentage": 0.9
 		},
 		{
-			"id": 1,
-			"name": "Orchid",
-			"description": "A beautiful orchid with lush flowers, perfect for brightening any environment. Its vibrant and delicate colors make it a charming choice.",
-			"image": "http://localhost:4202/assets/images/plant-a.svg",
-			"price": 25.99,
+			"id": 10,
+			"name": "Bromeliad",
+			"description": "The bromeliad, with its vivid colors and unique shape, is a tropical plant that adds an exotic touch to the decor. Its leaves form an elegant and lasting rosette.",
+			"image": "http://localhost:4202/assets/images/plant-j.svg",
+			"price": 24.5,
 			"metadata": {
-				"species": "Orchidaceae",
-				"predominant_color": "white, pink, purple, yellow",
-				"average_height": "30-60 cm",
-				"family": "Orchid",
+				"species": "Bromeliaceae",
+				"predominant_color": "red, pink, yellow",
+				"average_height": "30-90 cm",
+				"family": "Bromeliad",
 				"care_level": "Moderate",
-				"light_requirement": "Indirect sunlight",
+				"light_requirement": "Bright, indirect sunlight",
 				"water_requirement": "Moderate",
 				"environment": "Indoor",
-				"flowering_season": "Spring, Summer"
+				"flowering_season": "Year-round"
 			},
-			"match_percentage": 0.9
+			"match_percentage": 0.85
 		}
 	]
 }
