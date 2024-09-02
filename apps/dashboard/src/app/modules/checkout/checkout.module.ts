@@ -7,9 +7,8 @@ import {
 	IconsModule
 } from '@ng-shop-workspace/common-ui'
 
+import { RecommendationModule } from '@modules/recommendation/recommendation.module'
 import { LibsShopStateModule, ShopFacade } from '@ng-shop-workspace/shop-state'
-
-import { RecommendationListViewComponent } from '../recommendation/views'
 import { CheckoutItemComponent, CheckoutProductsViewComponent } from './view'
 
 @NgModule({
@@ -18,8 +17,8 @@ import { CheckoutItemComponent, CheckoutProductsViewComponent } from './view'
 		CommonModule,
 		IconsModule,
 		HeaderComponentModule,
-		RecommendationListViewComponent,
-		LibsShopStateModule.forRoot(),
+		RecommendationModule,
+		LibsShopStateModule.configure(),
 		RouterModule.forChild([
 			{
 				path: '',

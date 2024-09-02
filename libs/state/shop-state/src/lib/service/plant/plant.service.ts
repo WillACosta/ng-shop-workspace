@@ -1,12 +1,9 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
+import { ApiResponseOf } from '@ng-shop-workspace/core-common'
 import { retry } from 'rxjs'
 
 const BASE_URL = 'http://localhost:3000'
-
-interface ApiResponseOf<T> {
-	data: Array<T>
-}
 
 interface PlantResponse {
 	name: string
@@ -18,8 +15,6 @@ interface PlantResponse {
 @Injectable()
 export class PlantService {
 	constructor(private _http: HttpClient) {}
-
-	private _lang = 'en'
 
 	loadAllPlants() {
 		return this._http

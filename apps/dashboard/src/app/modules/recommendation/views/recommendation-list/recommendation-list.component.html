@@ -1,11 +1,11 @@
 <div class="p-10 mt-8 bg-secondary rounded-md">
 	<div class="flex gap-2 items-center text-primary-dark text-xl mb-12">
-		<lucide-angular [img]="Sparkles"></lucide-angular>
+		<lucide-angular name="sparkles"></lucide-angular>
 		<p>You might love this products</p>
 	</div>
 
 	<div class="flex flex-col lg:flex-row gap-10 justify-between items-center">
-		<ng-container *ngFor="let item of similarProducts">
+		<ng-container *ngFor="let item of similarProducts$ | async">
 			<ng-shop-workspace-product-item [product]="item">
 			</ng-shop-workspace-product-item>
 		</ng-container>

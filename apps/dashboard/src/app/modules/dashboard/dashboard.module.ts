@@ -25,7 +25,7 @@ import { PlantListViewComponent } from './views/plant-list/plant-list-view.compo
 		IconsModule,
 		HeaderComponentModule,
 		AppComponentsModule,
-		LibsShopStateModule.forRoot(),
+		LibsShopStateModule.configure(),
 		RouterModule.forChild([
 			{
 				path: '',

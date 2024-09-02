@@ -1,24 +1,39 @@
 import { CommonModule } from '@angular/common'
-
+import { HttpClientModule } from '@angular/common/http'
 import { ModuleWithProviders, NgModule } from '@angular/core'
+
 import { NgxsModule } from '@ngxs/store'
 
-import { HttpClientModule } from '@angular/common/http'
+import {
+	ProductFacade,
+	ProductState,
+	RecommendationsFacade,
+	RecommendationState,
+	ShopFacade,
+	ShopState
+} from './store'
+
+import { AIAgentService } from './service/ai-agent'
 import { PlantService } from './service/plant'
-import { ProductFacade, ProductState, ShopFacade, ShopState } from './store'
 
 @NgModule({
 	imports: [
 		CommonModule,
 		HttpClientModule,
-		NgxsModule.forRoot([ShopState, ProductState])
+		NgxsModule.forRoot([ShopState, ProductState, RecommendationState])
 	]
 })
 export class LibsShopStateModule {
-	static forRoot(): ModuleWithProviders<LibsShopStateModule> {
+	static configure(): ModuleWithProviders<LibsShopStateModule> {
 		return {
 			ngModule: LibsShopStateModule,
-			providers: [PlantService, ShopFacade, ProductFacade]
+			providers: [
+				AIAgentService,
+				PlantService,
+				ShopFacade,
+				ProductFacade,
+				RecommendationsFacade
+			]
 		}
 	}
 }

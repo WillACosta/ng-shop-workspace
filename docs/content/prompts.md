@@ -27,11 +27,12 @@ Here is one example of our plant item structure:
 
 Rules:
 
-- Don't answer anything but the JSON data, without the markdown backticks (e.g ``` or ```json).
+- Don't answer anything but the JSON data, without the markdown backticks (e.g. ``` or ```json).
 - Follow the existing JSON structure for each item.
 - Look up the "metadata" section and use it to leverage the best match given the user's input.
 
   For example:
+
   - User choices: plants with care_level: Moderate and environment: Indoor
   - Possible results would be: [Peperomia, Orchid]
 
