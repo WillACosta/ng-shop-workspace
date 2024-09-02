@@ -26,6 +26,6 @@ export class CheckoutProductsViewComponent {
 	}
 
 	onBack() {
-		this._router.navigate(['/dashboard'])
+		this._router.navigate(['/'])
 	}
 }

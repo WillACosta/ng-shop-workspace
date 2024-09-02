@@ -17,6 +17,6 @@ export class ListHeaderViewComponent {
 
 	redirectToCheckout() {
 		// TODO: create navigation service
-		this._router.navigate(['/dashboard/checkout'])
+		this._router.navigate(['/checkout'])
 	}
 }

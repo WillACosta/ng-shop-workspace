@@ -13,6 +13,7 @@ import {
 	ShopFacade
 } from '@ng-shop-workspace/shop-state'
 
+import { AppComponentsModule } from 'src/app/components/components.module'
 import { ListHeaderViewComponent } from './views/list-header/list-header-view.component'
 import { PlantListViewComponent } from './views/plant-list/plant-list-view.component'
 
@@ -22,6 +23,9 @@ import { PlantListViewComponent } from './views/plant-list/plant-list-view.compo
 		AsyncPipe,
 		CommonModule,
 		IconsModule,
+		HeaderComponentModule,
+		AppComponentsModule,
+		LibsShopStateModule.forRoot(),
 		RouterModule.forChild([
 			{
 				path: '',
@@ -34,9 +38,7 @@ import { PlantListViewComponent } from './views/plant-list/plant-list-view.compo
 						(m) => m.CheckoutModule
 					)
 			}
-		]),
-		LibsShopStateModule.forRoot(),
-		HeaderComponentModule
+		])
 	],
 	providers: [ShopFacade, ProductFacade],
 	exports: [ListHeaderViewComponent]

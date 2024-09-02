@@ -23,9 +23,9 @@
 						class="max-w-full w-[120px]"
 					/>
 
-					<div class="text-muted mt-5">
-						<p>oops! Seems like your cart is empty :(</p>
-						<p>try to add some items and back here again.</p>
+					<div class="text-muted mt-5 text-center text-lg">
+						<p>Oops! Seems like your cart is empty :(</p>
+						<p>Add some items and come back here again.</p>
 					</div>
 				</div>
 
@@ -45,10 +45,14 @@
 				<button
 					*ngIf="items.length"
 					class="sh-btn-primary"
-					title="Proceed to Payment">
+					title="Proceed to Payment"
+				>
 					Next
 				</button>
 			</div>
+
+			<ng-shop-workspace-recommendation-list>
+			</ng-shop-workspace-recommendation-list>
 		</ng-container>
 	</div>
 </div>

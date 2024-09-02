@@ -23,7 +23,7 @@ export class PlantService {
 
 	loadAllPlants() {
 		return this._http
-			.get<ApiResponseOf<PlantResponse>>(`${BASE_URL}/plants-${this._lang}`)
+			.get<ApiResponseOf<PlantResponse>>(`${BASE_URL}/plants`)
 			.pipe(retry(2))
 	}
 }

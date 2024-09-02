@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
+import { RouterModule } from '@angular/router'
 
 import {
 	HeaderComponentModule,
@@ -8,19 +9,23 @@ import {
 
 import { LibsShopStateModule, ShopFacade } from '@ng-shop-workspace/shop-state'
 
-import { RouterModule } from '@angular/router'
-import { moduleRoutes } from './checkout.module.routes'
-import { CheckoutProductsViewComponent } from './view'
-import { CheckoutItemComponent } from './view/components/checkout-item.component'
+import { RecommendationListViewComponent } from '../recommendation/views'
+import { CheckoutItemComponent, CheckoutProductsViewComponent } from './view'
 
 @NgModule({
 	declarations: [CheckoutProductsViewComponent, CheckoutItemComponent],
 	imports: [
 		CommonModule,
-		RouterModule.forChild(moduleRoutes),
-		LibsShopStateModule.forRoot(),
 		IconsModule,
-		HeaderComponentModule
+		HeaderComponentModule,
+		RecommendationListViewComponent,
+		LibsShopStateModule.forRoot(),
+		RouterModule.forChild([
+			{
+				path: '',
+				component: CheckoutProductsViewComponent
+			}
+		])
 	],
 	providers: [ShopFacade]
 })
