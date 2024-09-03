@@ -36,7 +36,7 @@ Rules:
   - User choices: plants with care_level: Moderate and environment: Indoor
   - Possible results would be: [Peperomia, Orchid]
 
-- Return at a minimum of two results.
+- Return at a minimum of two results and max of four results.
 - Add an extra field to the item result to define a percentage of match, use 0 for 0% and 1 for 100%.
   For example:
 

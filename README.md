@@ -1,6 +1,6 @@
 ### @ng-shop-workspace
 
-This project servers as a demonstration micro-frontend powered by NX and Module Federation Plugin, this is a simple plant shop, that have features such as recommendation system using AI agents, authentication, cart shop and state management with redux pattern.
+A micro-frontend application powered by NX and Module Federation Plugin, this is a simple plant shop, that have features such as recommendation system using AI agents, authentication, cart shop and state management with redux pattern.
 
 <center>
   <img src="docs/images/screenshot.png" alt="screenshot" style="margin-top: 35px"/>
@@ -14,10 +14,13 @@ This project servers as a demonstration micro-frontend powered by NX and Module 
 
 ### Project Architecture
 
-This project use the [Facade Design Pattern](https://refactoring.guru/design-patterns/facade), with object to simplify state management and abstract the NGXS Store APIs, with that concept
-the View layer don't have to know specifics of how the state works and how It's stored. In the image below, you can see how it works.
+This project uses [Facade Design Pattern](https://refactoring.guru/design-patterns/facade), to simplify state management and abstract Redux Pattern APIs (via NgXS), with that concept the view layer don't have to know anything about implementation details and how state works under the hood.
 
-<img src="docs/images/arch.png" />
+All app logic is placed inside the correspondent `*State` class, with that concept we follow the guidelines for [single responsibility](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design), each layer is responsible for one thing.
+
+See in the image below all the app's diagram flow:
+
+<img src="docs/images/app-diagram.png" />
 
 ### Technical Resources
 
@@ -37,7 +40,7 @@ the View layer don't have to know specifics of how the state works and how It's 
 git clone https://github.com/WillACosta/ng-shop-workspace
 ```
 
-3. Run the following command
+2. Run the following command
 
 ```bash
 pnpm install && pnpm bootstrap
@@ -45,4 +48,4 @@ pnpm install && pnpm bootstrap
 
 By executing this command, all the required dependencies will be installed, and the application will be served on `localhost:4200`.
 
-> You can find more information in the `package.json` file
+> Note: Go to the `apps/dashboard/src/environments` and copy the content of `environment.example.ts` and fill out with your own values. -- [get here](https://www.stackspot.com/en/).

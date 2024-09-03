@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core'
 
 import {
-	Actions,
-	Select,
-	Store,
-	ofActionErrored,
-	ofActionSuccessful
+  Actions,
+  Select,
+  Store,
+  ofActionErrored,
+  ofActionSuccessful
 } from '@ngxs/store'
 
 import { Observable } from 'rxjs'
 
-import { SignInPayload } from '../../core/types'
+import { SignInModel } from '../../core/types'
 import { SignInAction, SignOutAction } from '../actions/auth.actions'
 import { AuthState } from '../state/auth.state'
 
 interface IAuthFacade {
 	isAuthenticated$: Observable<boolean>
-	signIn(payload: SignInPayload): void
+	signIn(payload: SignInModel): void
 	signOut(): void
 }
 
@@ -32,7 +32,7 @@ export class AuthFacade implements IAuthFacade {
 
 	isAuthenticated = this._store.selectSnapshot(AuthState.isAuthenticated)
 
-	signIn(payload: SignInPayload): void {
+	signIn(payload: SignInModel): void {
 		const action = new SignInAction(payload)
 		this._store.dispatch(action)
 	}

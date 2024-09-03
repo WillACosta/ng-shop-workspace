@@ -6,7 +6,7 @@ import { catchError, retry, throwError } from 'rxjs'
 import { AUTH_STATE_OPTIONS, AuthStateOptions } from '../../core/injection'
 
 import { UserModel } from '../../core'
-import { SignInPayload } from '../../core/types'
+import { SignInModel } from '../../core/types'
 
 @Injectable()
 export class AuthService {
@@ -15,7 +15,7 @@ export class AuthService {
 		@Inject(AUTH_STATE_OPTIONS) private options: AuthStateOptions
 	) {}
 
-	signIn(payload: SignInPayload) {
+	signIn(payload: SignInModel) {
 		return this._httpClient.post<UserModel>(this.options.apiUrl, payload).pipe(
 			retry(2),
 			catchError((err) => this._handleError(err))
