@@ -24,7 +24,6 @@
 		"@ngxs/logger-plugin": "^3.8.1",
 		"@ngxs/store": "^3.8.1",
 		"@nx/angular": "16.8.1",
-		"angular-feather": "^6.5.0",
 		"lucide-angular": "^0.438.0",
 		"ngx-toastr": "^17.0.2",
 		"rxjs": "~7.8.0",

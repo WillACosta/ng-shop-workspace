@@ -1,13 +1,13 @@
+import { CurrencyPipe } from '@angular/common'
 import { NgModule } from '@angular/core'
 
-import { CurrencyPipe } from '@angular/common'
-import { FeatherModule } from 'angular-feather'
+import { AppIconsModule } from '@ng-shop-workspace/common-ui'
 import { ProductItemComponent } from './product-item/product-item.component'
 
 const components = [ProductItemComponent]
 
 @NgModule({
-	imports: [FeatherModule, CurrencyPipe],
+	imports: [AppIconsModule, CurrencyPipe],
 	declarations: components,
 	exports: components
 })

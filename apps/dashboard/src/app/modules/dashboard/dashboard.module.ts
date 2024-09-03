@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
 import {
-	HeaderComponentModule,
-	IconsModule
+	AppIconsModule,
+	HeaderComponentModule
 } from '@ng-shop-workspace/common-ui'
 
 import {
@@ -22,7 +22,7 @@ import { PlantListViewComponent } from './views/plant-list/plant-list-view.compo
 	imports: [
 		AsyncPipe,
 		CommonModule,
-		IconsModule,
+		AppIconsModule,
 		HeaderComponentModule,
 		DashboardComponentsModule,
 		LibsShopStateModule.configure(),

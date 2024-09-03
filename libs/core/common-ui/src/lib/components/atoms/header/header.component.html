@@ -6,10 +6,10 @@
 			*ngIf="shouldShowBackIcon"
 			title="Back"
 			(click)="onClickBack()">
-			<i-feather
+			<i-lucide
 				name="arrow-left"
 				class="text-primary hover:text-primary-dark">
-			</i-feather>
+			</i-lucide>
 		</button>
 
 		<ng-content select="[greeting]"></ng-content>
@@ -23,7 +23,7 @@
 				*ngIf="shouldShowShopIcon"
 				class="relative inline-block"
 				(click)="onClickShopCart()">
-				<i-feather name="shopping-cart"></i-feather>
+				<i-lucide name="shopping-cart"></i-lucide>
 
 				<span
 					class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">

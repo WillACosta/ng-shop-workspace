@@ -4,8 +4,8 @@
 		<p>You might love these products</p>
 	</div>
 
-	<div class="flex flex-col lg:flex-row gap-10 justify-between items-center">
-		<ng-container *ngFor="let item of similarProducts$ | async">
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-10 justify-between items-center">
+		<ng-container *ngFor="let item of fakeProducts">
 			<ng-shop-workspace-product-item [product]="item">
 			</ng-shop-workspace-product-item>
 		</ng-container>

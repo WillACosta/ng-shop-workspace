@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
 import {
-	HeaderComponentModule,
-	IconsModule
+	AppIconsModule,
+	HeaderComponentModule
 } from '@ng-shop-workspace/common-ui'
 
 import { RecommendationModule } from '@modules/recommendation/recommendation.module'
@@ -15,7 +15,7 @@ import { CheckoutItemComponent, CheckoutProductsViewComponent } from './view'
 	declarations: [CheckoutProductsViewComponent, CheckoutItemComponent],
 	imports: [
 		CommonModule,
-		IconsModule,
+		AppIconsModule,
 		HeaderComponentModule,
 		RecommendationModule,
 		LibsShopStateModule.configure(),

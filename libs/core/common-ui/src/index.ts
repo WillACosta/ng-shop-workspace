@@ -1,2 +1,2 @@
-export * from './lib/components';
-export * from './lib/feather-icons/feather-icons.module';
+export * from './lib/app-icons/app-icons.module'
+export * from './lib/components'
