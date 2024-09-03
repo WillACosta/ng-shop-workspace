@@ -5,9 +5,20 @@
 	</div>
 
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-10 justify-between items-center">
-		<ng-container *ngFor="let item of fakeProducts">
-			<ng-shop-workspace-product-item [product]="item">
-			</ng-shop-workspace-product-item>
+		<ng-container *ngIf="similarProducts$	| async as products">
+
+			<ng-container *ngIf="products.length === 0">
+				<ng-shop-workspace-product-item-shimmer></ng-shop-workspace-product-item-shimmer>
+				<ng-shop-workspace-product-item-shimmer></ng-shop-workspace-product-item-shimmer>
+			</ng-container>
+
+			<ng-container *ngIf="products.length > 0">
+				<ng-container *ngFor="let item of products">
+					<ng-shop-workspace-product-item [product]="item">
+					</ng-shop-workspace-product-item>
+				</ng-container>
+			</ng-container>
+
 		</ng-container>
 	</div>
 </div>
