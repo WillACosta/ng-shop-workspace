@@ -1,58 +1,121 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 
-import { Observable, of } from 'rxjs'
+import {
+	interval,
+	map,
+	Observable,
+	skipWhile,
+	Subject,
+	switchMap,
+	takeUntil,
+	tap,
+	timeout
+} from 'rxjs'
 
 import { ApiResponseOf, ProductModel } from '@ng-shop-workspace/core-common'
+import { ExecutionStatusResponse, StkTokenResponse } from './types'
 
 @Injectable()
 export class AIAgentService {
 	constructor(private _http: HttpClient) {}
 
+	private _finishRequestLoop$ = new Subject()
+
 	getRecommendationsByProducts(
 		products: ProductModel[]
 	): Observable<ApiResponseOf<ProductModel>> {
-		return of({
-			data: [
+		let token = ''
+
+		return this._getToken().pipe(
+			tap((t) => (token = t)),
+			switchMap(() =>
+				this._createExecution('recommendation-shop', products, token)
+			),
+			switchMap((executionId) => this._getExecutionStatus(executionId, token)),
+			map((result) => JSON.parse(result))
+		)
+	}
+
+	private _getToken(): Observable<string> {
+		const authUrl =
+			'https://idm.stackspot.com/stackspot-freemium/oidc/oauth/token'
+		const clientId = '8b069af3-d37d-4d2c-b491-6d12f67420fc'
+		const clientSecret =
+			'FjmNEH8zC78j7Ab1en4ufZlx9g4PA14uCgPwc6ok6IChf8B0WZ5E5Cv9Sl5r00sK'
+
+		return this._http
+			.post<StkTokenResponse>(
+				authUrl,
+				new URLSearchParams({
+					client_id: clientId,
+					client_secret: clientSecret,
+					grant_type: 'client_credentials'
+				}),
 				{
-					id: 6,
-					name: 'Ficus',
-					description:
-						'The ficus, with its lush and shiny leaves, is a versatile indoor plant. It adapts to different light conditions and adds a touch of freshness to the decor.',
-					image: 'http://localhost:4202/assets/images/plant-f.svg',
-					price: 22.5,
-					metadata: {
-						species: 'Moraceae',
-						predominant_color: 'green',
-						average_height: '100-300 cm',
-						family: 'Ficus',
-						care_level: 'Moderate',
-						light_requirement: 'Indirect sunlight',
-						water_requirement: 'Moderate',
-						environment: 'Indoor',
-						flowering_season: 'Year-round'
-					}
-				},
-				{
-					id: 10,
-					name: 'Bromeliad',
-					description:
-						'The bromeliad, with its vivid colors and unique shape, is a tropical plant that adds an exotic touch to the decor. Its leaves form an elegant and lasting rosette.',
-					image: 'http://localhost:4202/assets/images/plant-j.svg',
-					price: 24.5,
-					metadata: {
-						species: 'Bromeliaceae',
-						predominant_color: 'red, pink, yellow',
-						average_height: '30-90 cm',
-						family: 'Bromeliad',
-						care_level: 'Moderate',
-						light_requirement: 'Bright, indirect sunlight',
-						water_requirement: 'Moderate',
-						environment: 'Indoor',
-						flowering_season: 'Year-round'
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
 					}
 				}
-			] as ProductModel[]
-		})
+			)
+			.pipe(map(({ access_token }) => access_token))
+	}
+
+	private _createExecution(
+		resourceName: string,
+		payload: object,
+		token: string
+	): Observable<string> {
+		const stkUrl = '/v1/quick-commands'
+
+		return this._http
+			.post<string>(
+				`${stkUrl}/create-execution/${resourceName}`,
+				JSON.stringify({
+					input_data: {
+						cart_products: payload
+					}
+				}),
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+						'Content-Type': 'application/json'
+					}
+				}
+			)
+			.pipe(map((executionId) => executionId))
+	}
+
+	private _getExecutionStatus(
+		executionId: string,
+		token: string
+	): Observable<string> {
+		const stkUrl = '/v1/quick-commands'
+
+		return interval(3000).pipe(
+			timeout(30000),
+			takeUntil(this._finishRequestLoop$),
+			switchMap(() =>
+				this._http.get<ExecutionStatusResponse>(
+					`${stkUrl}/callback/${executionId}`,
+					{
+						headers: {
+							Authorization: `Bearer ${token}`
+						}
+					}
+				)
+			),
+			skipWhile(({ progress, result }) => {
+				return progress.status === 'RUNNING' || result == null
+			}),
+			map(({ steps }) => {
+				const result = steps[0]
+				return result.step_result.answer
+			}),
+			tap(() => {
+				this._finishRequestLoop$.next(true)
+				this._finishRequestLoop$.complete()
+			})
+		)
 	}
 }

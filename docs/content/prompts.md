@@ -9,7 +9,7 @@ Here is one example of our plant item structure:
 	"id": 1,
 	"name": "Orchid",
 	"description": "A beautiful orchid with lush flowers, perfect for brightening any environment. Its vibrant and delicate colors make it a charming choice.",
-	"image": "http://localhost:4202/assets/images/plant-a.svg",
+	"image": "http://localhost:3002/assets/images/plant-a.svg",
 	"price": 25.99,
 	"metadata": {
 		"species": "Orchidaceae",
@@ -27,7 +27,7 @@ Here is one example of our plant item structure:
 
 Rules:
 
-- Don't answer anything but the JSON data, without the markdown backticks (e.g. ``` or ```json).
+- Don't answer anything but the JSON data, without the markdown backticks (e.g. `or`json).
 - Follow the existing JSON structure for each item.
 - Look up the "metadata" section and use it to leverage the best match given the user's input.
 

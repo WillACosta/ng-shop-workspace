@@ -27,7 +27,7 @@ the View layer don't have to know specifics of how the state works and how It's 
 - Micro-frontend approach using [Module Federation](https://webpack.js.org/concepts/module-federation/)
 - State Management with [NGXS library](https://www.ngxs.io/)
 - [Tailwind CSS](https://tailwindcss.com/) for create beautifully, responsive and accessible UI
-- [Angular](https://angular.io/) for frontend apps
+- [Angular v16.2 | Node 16.x](https://angular.io/) for the micro-frontend apps
 
 ### Getting Started
 

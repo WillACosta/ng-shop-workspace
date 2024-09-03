@@ -1,0 +1,11 @@
+{
+  "/v1/quick-commands/*": {
+    "target": "https://genai-code-buddy-api.stackspot.com",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/v1/quick-commands": "/v1/quick-commands"
+    }
+  }
+}

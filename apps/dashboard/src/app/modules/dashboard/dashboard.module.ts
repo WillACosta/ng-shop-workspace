@@ -13,7 +13,7 @@ import {
 	ShopFacade
 } from '@ng-shop-workspace/shop-state'
 
-import { AppComponentsModule } from 'src/app/components/components.module'
+import { DashboardComponentsModule } from 'src/app/components/components.module'
 import { ListHeaderViewComponent } from './views/list-header/list-header-view.component'
 import { PlantListViewComponent } from './views/plant-list/plant-list-view.component'
 
@@ -24,7 +24,7 @@ import { PlantListViewComponent } from './views/plant-list/plant-list-view.compo
 		CommonModule,
 		IconsModule,
 		HeaderComponentModule,
-		AppComponentsModule,
+		DashboardComponentsModule,
 		LibsShopStateModule.configure(),
 		RouterModule.forChild([
 			{

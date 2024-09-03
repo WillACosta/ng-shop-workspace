@@ -16,7 +16,12 @@ export class ListHeaderViewComponent {
 	userName = 'Will'
 
 	redirectToCheckout() {
-		// TODO: create navigation service
-		this._router.navigate(['/checkout'])
+		// TODO: delegate this to a navigation service
+		const isInternalRoute = window.location.href.includes('3002')
+		if (isInternalRoute) {
+			this._router.navigate(['/checkout'])
+		} else {
+			this._router.navigate(['/dashboard/checkout'])
+		}
 	}
 }

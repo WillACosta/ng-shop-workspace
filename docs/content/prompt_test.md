@@ -7,7 +7,7 @@
 			"id": 1,
 			"name": "Orchid",
 			"description": "A beautiful orchid with lush flowers, perfect for brightening any environment. Its vibrant and delicate colors make it a charming choice.",
-			"image": "http://localhost:4202/assets/images/plant-a.svg",
+			"image": "http://localhost:3002/assets/images/plant-a.svg",
 			"price": 25.99,
 			"metadata": {
 				"species": "Orchidaceae",
@@ -25,7 +25,7 @@
 			"id": 2,
 			"name": "Succulent",
 			"description": "A resilient and easy-to-care-for succulent. Ideal for those seeking a low-maintenance plant. Its fleshy leaves store water, providing greater durability.",
-			"image": "http://localhost:4202/assets/images/plant-b.svg",
+			"image": "http://localhost:3002/assets/images/plant-b.svg",
 			"price": 12.5,
 			"metadata": {
 				"species": "Crassulaceae",
@@ -52,7 +52,7 @@
 			"id": 6,
 			"name": "Ficus",
 			"description": "The ficus, with its lush and shiny leaves, is a versatile indoor plant. It adapts to different light conditions and adds a touch of freshness to the decor.",
-			"image": "http://localhost:4202/assets/images/plant-f.svg",
+			"image": "http://localhost:3002/assets/images/plant-f.svg",
 			"price": 22.5,
 			"metadata": {
 				"species": "Moraceae",
@@ -71,7 +71,7 @@
 			"id": 10,
 			"name": "Bromeliad",
 			"description": "The bromeliad, with its vivid colors and unique shape, is a tropical plant that adds an exotic touch to the decor. Its leaves form an elegant and lasting rosette.",
-			"image": "http://localhost:4202/assets/images/plant-j.svg",
+			"image": "http://localhost:3002/assets/images/plant-j.svg",
 			"price": 24.5,
 			"metadata": {
 				"species": "Bromeliaceae",

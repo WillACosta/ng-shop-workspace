@@ -3,12 +3,13 @@
 	"version": "0.0.1",
 	"license": "MIT",
 	"scripts": {
-		"bootstrap": "concurrently \"yarn:start:api\" \"yarn:start:all\"",
+		"bootstrap": "concurrently \"pnpm:start:api\" \"pnpm:start:all\"",
 		"start:api": "json-server api/api-service.json --watch",
 		"start:all": "nx serve shell --devRemotes=auth,dashboard",
+		"start:dash": "nx serve dashboard",
 		"test:auth-state": "nx test libs/state/auth-state",
 		"test:shop-state": "nx test libs/state/shop-state",
-		"test": "yarn test:auth-state && yarn test:auth-state"
+		"test": "pnpm test:auth-state && pnpm test:auth-state"
 	},
 	"private": true,
 	"dependencies": {

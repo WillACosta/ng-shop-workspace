@@ -4,6 +4,7 @@ export class ProductModel {
 	price: number
 	description: string
 	image: string
+	match_percentage?: number
 	metadata: {
 		species: string
 		predominant_color: string
@@ -16,7 +17,7 @@ export class ProductModel {
 		flowering_season: string
 	}
 
-	deserialize(input: NonNullable<unknown>) {
+	deserialize(input: NonNullable<object>) {
 		Object.assign(this, input)
 		return this
 	}

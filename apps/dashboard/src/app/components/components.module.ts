@@ -11,4 +11,4 @@ const components = [ProductItemComponent]
 	declarations: components,
 	exports: components
 })
-export class AppComponentsModule {}
+export class DashboardComponentsModule {}

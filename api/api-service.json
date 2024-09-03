@@ -5,7 +5,7 @@
 				"id": 1,
 				"name": "Orchid",
 				"description": "A beautiful orchid with lush flowers, perfect for brightening any environment. Its vibrant and delicate colors make it a charming choice.",
-				"image": "http://localhost:4202/assets/images/plant-a.svg",
+				"image": "http://localhost:3002/assets/images/plant-a.svg",
 				"price": 25.99,
 				"metadata": {
 					"species": "Orchidaceae",
@@ -23,7 +23,7 @@
 				"id": 2,
 				"name": "Succulent",
 				"description": "A resilient and easy-to-care-for succulent. Ideal for those seeking a low-maintenance plant. Its fleshy leaves store water, providing greater durability.",
-				"image": "http://localhost:4202/assets/images/plant-b.svg",
+				"image": "http://localhost:3002/assets/images/plant-b.svg",
 				"price": 12.5,
 				"metadata": {
 					"species": "Crassulaceae",
@@ -41,7 +41,7 @@
 				"id": 3,
 				"name": "Jasmine",
 				"description": "Jasmine, known for its captivating perfume, is perfect for gardens and outdoor areas. Its white flowers emit a sweet and relaxing fragrance.",
-				"image": "http://localhost:4202/assets/images/plant-c.svg",
+				"image": "http://localhost:3002/assets/images/plant-c.svg",
 				"price": 18.75,
 				"metadata": {
 					"species": "Oleaceae",
@@ -59,7 +59,7 @@
 				"id": 4,
 				"name": "Lily",
 				"description": "The lily, a symbol of purity and elegance, is a sophisticated choice for any environment. Its majestic flowers and long stems create an imposing visual.",
-				"image": "http://localhost:4202/assets/images/plant-d.svg",
+				"image": "http://localhost:3002/assets/images/plant-d.svg",
 				"price": 30.0,
 				"metadata": {
 					"species": "Lilium",
@@ -77,7 +77,7 @@
 				"id": 5,
 				"name": "Cactus",
 				"description": "The cactus, adapted to arid climates, is a unique and modern addition to your plant collection. Its intriguing shapes and low care requirements make it a popular choice.",
-				"image": "http://localhost:4202/assets/images/plant-e.svg",
+				"image": "http://localhost:3002/assets/images/plant-e.svg",
 				"price": 9.99,
 				"metadata": {
 					"species": "Cactaceae",
@@ -95,7 +95,7 @@
 				"id": 6,
 				"name": "Ficus",
 				"description": "The ficus, with its lush and shiny leaves, is a versatile indoor plant. It adapts to different light conditions and adds a touch of freshness to the decor.",
-				"image": "http://localhost:4202/assets/images/plant-f.svg",
+				"image": "http://localhost:3002/assets/images/plant-f.svg",
 				"price": 22.5,
 				"metadata": {
 					"species": "Moraceae",
@@ -113,7 +113,7 @@
 				"id": 7,
 				"name": "Violet",
 				"description": "The violet, with its small and vibrant flowers, is perfect for adding color to indoor spaces. Easy to care for, it is a popular choice among plant lovers.",
-				"image": "http://localhost:4202/assets/images/plant-g.svg",
+				"image": "http://localhost:3002/assets/images/plant-g.svg",
 				"price": 15.99,
 				"metadata": {
 					"species": "Violaceae",
@@ -131,7 +131,7 @@
 				"id": 8,
 				"name": "Fern",
 				"description": "The fern, with its elegant and delicate leaves, brings a sense of freshness and naturalness. Ideal for shaded areas, it adds a touch of nature to any environment.",
-				"image": "http://localhost:4202/assets/images/plant-h.svg",
+				"image": "http://localhost:3002/assets/images/plant-h.svg",
 				"price": 17.25,
 				"metadata": {
 					"species": "Polypodiopsida",
@@ -149,7 +149,7 @@
 				"id": 9,
 				"name": "Sunflower",
 				"description": "The sunflower, a symbol of vitality and joy, is a radiant choice for sunny gardens. Its yellow flowers follow the sun's movement, creating a charming visual spectacle.",
-				"image": "http://localhost:4202/assets/images/plant-i.svg",
+				"image": "http://localhost:3002/assets/images/plant-i.svg",
 				"price": 28.99,
 				"metadata": {
 					"species": "Asteraceae",
@@ -167,7 +167,7 @@
 				"id": 10,
 				"name": "Bromeliad",
 				"description": "The bromeliad, with its vivid colors and unique shape, is a tropical plant that adds an exotic touch to the decor. Its leaves form an elegant and lasting rosette.",
-				"image": "http://localhost:4202/assets/images/plant-j.svg",
+				"image": "http://localhost:3002/assets/images/plant-j.svg",
 				"price": 24.5,
 				"metadata": {
 					"species": "Bromeliaceae",
@@ -185,7 +185,7 @@
 				"id": 11,
 				"name": "Peperomia",
 				"description": "The peperomia, with its small leaves and interesting patterns, is a charming indoor plant. It thrives in low-light environments and is a popular choice for compact spaces.",
-				"image": "http://localhost:4202/assets/images/plant-k.svg",
+				"image": "http://localhost:3002/assets/images/plant-k.svg",
 				"price": 14.75,
 				"metadata": {
 					"species": "Piperaceae",
@@ -203,7 +203,7 @@
 				"id": 12,
 				"name": "Azalea",
 				"description": "The azalea, with its abundant and colorful flowers, is a charming option for gardens and balconies. Its lush flowering adds a touch of beauty to the landscape.",
-				"image": "http://localhost:4202/assets/images/plant-l.svg",
+				"image": "http://localhost:3002/assets/images/plant-l.svg",
 				"price": 19.99,
 				"metadata": {
 					"species": "Ericaceae",
