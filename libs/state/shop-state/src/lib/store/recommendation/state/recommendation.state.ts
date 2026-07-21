@@ -29,12 +29,10 @@ export class RecommendationState {
 		{ getState, patchState }: StateContext<RecommendationStateModel>,
 		{ payload }: GetRecommendationsAction
 	) {
-		return this._aiService.getRecommendationsByProducts(payload).pipe(
-			map((response) => response.data),
-			map((value) => value.map((e) => new ProductModel().deserialize(e))),
-			tap((products) => {
-				patchState({ products })
-			})
+		return this._aiService.getAnswer('recommendations', payload).pipe(
+			map(({ message }) => message),
+			map((item) => item.map((e) => new ProductModel().deserialize(e))),
+			tap((products) => patchState({ products }))
 		)
 	}
 }

@@ -59,6 +59,4 @@ Rules:
 
 - You can't repeat user choices, the results should be different from those provided.
 
-Here is the data:
-
-User cart products: {{ input_data.cart_products }}
+Here is the data, user cart products: {{ input_data.cart_products }}
